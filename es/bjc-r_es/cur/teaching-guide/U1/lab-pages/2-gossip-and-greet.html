@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r_es/llab/loader.js"></script>
+		<title>Unit 1 Lab 2 Teacher Guide</title>
+	</head>
+
+	<body>
+		<h2>Lab 2: Gossip and Greet</h2>
+        <p>In Labs 2 and 3, students learn a new idea: not only can they assemble existing blocks (code) to create sequences (scripts), they can also encapsulate an entire script into a single new block of their own design, which they can then use as if that block had always existed. This process—one aspect of <em>abstraction</em>—is basic to computer science. Students will see how a multi-part script can be "hidden" inside a block (so students don't need to see all the details of the block at once) and given a name (so they can easily know what it does).</p>
+        <p>In this Lab 2, students program two sprites to gossip with each other, picking randomly from words and ideas that students specify. The context is whimsical&mdash;students generally enjoy teaching a computer to gossip and find the results funny—but the ideas they are learning are deep. Getting a computer to generate (and understand) natural language has been the serious work of computer scientists for decades; Siri is one of the results. They first experiment with blocks that have been built for them and see what they do. Then, they learn to <em>edit</em> and <em>modify</em> these blocks. Finally, they <em>create</em> a new block of their own using the exact same structure they've seen in the blocks they've edited, but with new content. In doing so, they will learn how to create lists of data, select data from those lists, and combine data in new ways. In Lab 3, they will extend this knowledge to another aspect of abstraction&mdash;learning how to give blocks inputs.</p>
+        
+        
+		<h3>Pacing</h3>
+		<div>
+			The 4 lab pages could be split across 2-3 days (<strong>55-110 minutes</strong>). Expected times to complete follow:
+			<ul>
+				<li>10-20 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/2-gossip-and-greet/1-gossip.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Making Programs Talk">Making Programs Talk</a></li>
+				<li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/2-gossip-and-greet/2-customizing.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Customizing and Debugging">Customizing and Debugging</a></li>
+				<li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/2-gossip-and-greet/3-making-a-new-block.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Making Your Own Block">Making Your Own Block</a></li>
+				<li>10-20 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/2-gossip-and-greet/4-learning-names.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Learning Player Names">Learning Player Names</a></li>
+			</ul>
+		</div>
+        
+        
+        <h3>Lab Pages</h3>
+        <div>
+            <ul>
+				<li>
+					<strong>Page 1: Making Programs Talk.</strong>
+					<ul>
+						<li>
+                            <strong>Learning Goals:</strong> 
+                            <ul>
+                                <li>Learn to try out code to see what it does.</li>
+                                <li>Analyze code to see how it works.</li>
+                            </ul>
+                        </li>
+						<li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>The XML file that students load (U1L2-GreetPlayer.xml) already has a <var>player list</var> variable that has been initialized as an empty list. In future units, students will need to define and initialize variables themselves, but as this unit is not focused on the use of variables, it has already been done in this project.</li>
+                                <li>The starter project shows Snap<em>!</em> code with comments attached. Some students may <em>want</em> to comment some of their code, for their own information, but please don't <em>require</em> students to do so. This isn't a software engineering course preparing students for the workforce. Keep the focus in this first course on the beauty and joy.</li>
+                            </ul>
+                        </li>
+                        
+					</ul>
+				</li>
+				<li>
+					<strong>Page 2: Customizing and Debugging.</strong>
+					<ul>
+						<li>
+                        	<strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Personalize the <code>who</code>, <code>does what</code>, and <code>who2</code> blocks by inserting the phrases into the <code>list</code> blocks inside.</li>
+                                <li>Become familiar with the concept of debugging, and debug any issues that arise in the project.</li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<strong>Tips: </strong>
+                            <ul>
+                                <li>Set clear expectations for the appropriateness of the student additions to the gossip project blocks.</li>
+                                <li>It is probably too early to talk about abstraction and name it. Students will need to see more examples of it before it needs a piece of technical vocabulary. But two of its attributes may be worth mentioning even now: one, putting <img src="/bjc-r_es/img/1-introduction/item-(random)-of-(list-(Senora_my-cat_more)).png" alt="item-(random)-of-(list-(Señora_my-cat_more))" title="item-(random)-of-(list-(Señora_my-cat_more))" /> inside a block named <img src="/bjc-r_es/img/1-introduction/who.png" alt="who" title="who" /> makes code easier to read and understand by "hiding the complexity," and two, using a simple name that describes the purpose of the code. Once we understand what <code>who</code> does and are assured that it works properly, we no longer need or want to see the guts of how it works.</li>
+                            </ul>
+                        </li>
+					</ul>
+				</li>
+				<li>
+					<strong>Page 3: Making Your Own Block.</strong>
+					<ul>
+                        <li>
+                        	<strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Create a new <em>reporter</em> block (oval shape) called <code>gossip response</code> with the same inner structure as the three reporters included in the starter project.</li>
+                                <li>Edit the <code>gossip2</code> block to include the new block. </li>
+                            </ul>
+                        </li>
+					</ul>
+				</li>
+				<li>
+					<strong>Page 4: Learning Player Names.</strong>
+					<ul>
+                        <li><strong>Learning Goal:</strong> Create a new <em>command</em> block (puzzle-shaped) called <code>greet player</code> that greets the player appropriately when clicked.</li>
+                        <li><strong>Tip:</strong> In the starter project included in this lab, the <var>player list</var> variable has already been created and initialized as an empty list. In Unit 2, students will learn how to create and initialize variables, but in this early lab, we've done this for students so that they can focus on sequencing the blocks provided. You can explain this if someone asks, but learning about variables is not a goal of this lab and does not need  teaching at this time.</li>
+                    </ul>
+				</li>
+			</ul>
+        </div>
+        
+        
+        <h3>Solutions</h3>
+		<div>
+            <ul>
+                <div class="todo">
+                    <p>The <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L2-Gossip%20(answer%20file)&editMode" target="_blank">U1L2-Gossip (answer file)</a> project file has a green flag. Is that critical to what this project is?--MF, 3/19/18</p>
+                    <p>The <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L2-GreetPlayer%20(answer%20file)&editMode" target="_blank">U1L2-GreetPlayer%20(answer%20file)</a> doesn't have a green flag, but it should for the purpose of this project, right? If we add it though, we need to edit the student lab page to request it (maybe just change #5 to say "... Fix any bugs, and make your project greet the played as soon as it is opened (when <code>green flag clicked</code>).") --MF, 3/19/18</p>
+                </div>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L2-Gossip%20(answer%20file)&editMode" target="_blank" title="Solution to Page 1: Making Programs Talk, Page 2: Customizing and Debugging, Page 3: Making Your Own Block.">Page 1: Making Programs Talk, Page 2: Customizing and Debugging, Page 3: Making Your Own Block</a></li>
+				<li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L2-GreetPlayer%20(answer%20file)&editMode" target="_blank" title="Solution to Page 4: Learning Player Names">Page 4: Learning Player Names</a></li>
+            </ul>
+        </div>
+			
+			
+		<h3>Correlation with AP CS Principles Framework<a name="AP" class="anchor">&nbsp;</a></h3>
+		<div class="apStandards">
+			<!--<h4>Computational Thinking Practices:</h4>
+			<ul>
+				<li>Coming soon...</li>
+			</ul-->
+			<div class="todo">
+                <p>This list is okay, except that there is no <em>explicit</em> discussion of abstraction.  At minimum, there should be a gray box on the first page (moved from wherever it is now).  But this is a central idea, and it deserves an orange box pointing out that <code>who</code>, for example, isn't built into Snap<em>!</em>, but once it's built you can use it in your program just as if it were built in.  Also, we need a gray box for "concatenation" (not substring, which doesn't happen in this lab, since plural was removed). -bh</p>
+                <p>Thanks Brian, Please feel free to make the changes you suggest above, but please be sure that someone reviews them. --MF, 7/20/17</p>
+            </div>
+			<h4>Enduring Understandings:</h4>
+			<div class="todo">Students edit and create custom blocks that hide the details of the underlying code (<strong>EU 2.2</strong>, <strong>EU 5.3</strong>). This lab builds toward these EUs by introducing abstraction in the context of conversation: the program constructs a sentence by appending a noun phrase, a verb phrase, and a second noun phrase, and each phrase is itself another procedure that selects its output randomly from a list prescribed by the student.</div>
+			<ul>
+				<li><strong>EU 2.2</strong> Multiple levels of abstraction are used to write programs or create other computational artifacts.</li>
+                <li><strong>EU 5.3</strong> Programming is facilitated by appropriate abstractions.</li>
+			</ul>	
+            <h4>Learning Objectives:</h4>
+            <div class="todo">Following the model blocks provided in the starter project for this early lab, students create custom noun block (<strong>LO 2.2.1</strong>) that masks the complexity (<strong>LO 5.3.1</strong>) of the program.</div>
+            <ul>
+                <li><strong>LO 2.2.1</strong> Develop an abstraction when writing a program or creating other computational artifacts. [P2]</li>
+                <li><strong>LO 5.3.1</strong> Use abstraction to manage complexity in programs. [P3]</li>
+            </ul>
+            <h4>Essential Knowledge:</h4>
+            <ul>
+                <li><strong>EK 2.2.1A</strong> The process of developing an abstraction involves removing detail and generalizing functionality.</li>
+                <li><strong>EK 2.2.1B</strong> An abstraction extracts common features from specific examples in order to generalize concepts.</li>
+                <li><strong>EK 5.3.1A</strong> Procedures are reusable programming abstractions.</li>
+                <li><strong>EK 5.3.1C</strong> Procedures reduce the complexity of writing and maintaining programs.</li>
+                <li><strong>EK 5.3.1D</strong> Procedures have names and may have parameters and return values.</li>
+                <li><strong>EK 5.3.1I</strong> Strings and string operations, including concatenation and some form of substring, are common in many programs.</li>
+            </ul>
+		</div>			
+
+
+	</body>
+</html>

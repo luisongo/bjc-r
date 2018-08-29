@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="/bjc-r_es/llab/loader.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+		<title>Unit 1 Lab 3 Teacher Guide</title>
+    </head>
+    
+    <body>
+        <h2>Lab 3: Modern Art with Polygons</h2>
+        <div class="todo">There is a lot of todo and commented out text on this page. To be cleaned up next year. --MF, 12/19/17</div>
+		<img class="imageRight" src="/bjc-r_es/img/1-introduction/draw-square.png" alt="pen down; repeat (4) {move (50) steps; turn clockwise (90) degrees}" title="pen down; repeat (4) {move (50) steps; turn clockwise (90) degrees}" />
+        <p>Students program sprites to move, turn and draw. Students also learn how to use two looping <strong>control</strong> structures for which conditions can be set.  They will then apply their knowledge to creating original art works at the end of the Unit.</p>
+        <!--<p>Students build experience with loops and conditionals without yet formalizing. Resist the urge to "teach" these concepts at the outset; instead, allow students to learn how these work <em>in context</em>, applying them to their programs. Students will get lots of experience with loops and conditionals and will codify this learning later.</p>-->
+		
+        <h3>Pacing:</h3>
+        <p>
+        	The 6 required lab pages could be split across 3-5 days (<strong>105-210 minutes</strong>). Expected times to complete follow:
+			<ul>
+                <li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/1-exploring-motion.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Exploring Motion">Exploring Motion</a></li>
+                <li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/2-exploring-snap-drawing-motion.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Angles and Turning">Angles and Turning</a></li>
+                <li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/3-blocks-with-inputs.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Blocks with Inputs<">Blocks with Inputs</a></li>
+                <li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/4-modify-your-pinwheel.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Modify Your Pinwheel">Modify Your Pinwheel</a></li>
+                <li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/5-remix-your-pinwheel.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Remix Your Pinwheel">Remix Your Pinwheel</a></li>
+				<li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/6-the-for-block.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Looping with a Counter">Looping with a Counter</a></li>
+				<li>If used, 40-60 minutes (1-2 class periods) on <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/7-graphics-and-art.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Graphics and Art">Graphics and Art</a>*</li>
+            </ul>
+            <!-- We don't say this on any other TG pages... --MF, 4/4/17 Include time for students to present and discuss several <a href="/bjc-r_es/cur/teaching-guide/U1/general-support/computing-in-the-news.html?topic=nyc_bjc%2F1-teaching-guide.topic&course=bjc4nyc_2015-2016_teacher.html&novideo&noassignment">Computing in the News</a> stories.-->
+        </p>
+        		
+        <div w3-include-html="/bjc-r_es/utilities/includes/asterisk.txt"></div><script>w3.includeHTML();</script>
+        
+        <h3>Lab Pages</h3>
+		<div>
+			<ul>
+				<li>
+					<strong>Page 1: Exploring Motion.</strong>
+                    <ul>
+						<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Use the <code>repeat</code> block to carry out the same action several times.</li>
+                                <li>Control the relative sprite movement with the <code>move</code> block.</li>
+                                <li>Control the relative sprite direction with the <code>turn</code> block.</li>
+                                <li>Set the pen thickness <!--and color--> with the <!--appropriate blocks in the pen palette--> <code>set pen size</code> block.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>To launch this lab</strong>&mdash;Make a Prediction: <a href="https://docs.google.com/document/d/1UlHWatINw9crcqeA0hjDb1n-toPSNtmSfegBM5zXCbw/edit?usp=sharing" target="_blank" title="Make a Prediction: Repeat, Move, Turn">Repeat, Move, Turn</a>
+                            <ul>
+                                <li>Project the script and ask students to predict what it does (discuss in small groups and/or as a class).</li>
+                                <li>Discussion: Ask students "How do programs implement algorithms?" Listen for students to recognize that programs <em>execute instructions in order (sequentially)</em> and <em>process each next step automatically</em>.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>The first page of this lab gives students a simple script to draw a square and asks them to experiment with it, changing various numbers in the script and observing the results. Students who are accustomed to being told exactly what to do may flounder. Tell them that <em>creativity</em> is one of the Big Ideas of Computer Science Principles and that in this sort of exploratory lesson there are <em>no wrong answers</em>.</li>                                
+                            </ul>
+                        </li>
+					</ul>
+                </li>
+                <li>
+					<strong>Page 2: Angles and Turning.</strong>
+                    <ul>
+                    	<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Explore the concept of turning angle through experimentation.</li>
+                                <li>Adapt simple scripts by changing the inputs.</li>
+                                <li>Work with multiple constraints to achieve a desired outcome.</li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<strong>Tips:</strong>
+                            <ul>
+                                <li>This page is a prelude for the upcoming pages and is an opportunity for students to experiment and make discoveries on their own.</li>
+                                <li>
+                                    A recent update to Chrome introduced a bug that affects the Snap! <code>set pen color to</code> block with the square picture of the actual color (not the block with a color <em>number</em>). Until this is fixed, there are two workarounds:
+                                    <ol style="list-style-type:decimal;">
+                                        <li>Use a different browser.</li>
+                                        <li>If you experience this slowdown, resizing the browser window slightly will fix it.</li>
+                                    </ol>
+								</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+					<strong>Page 3: Blocks with Inputs.</strong>
+                <!--<div class="todo">
+                        <p><strong>What you will do:</strong> Turn the scripts you have built into a single block, with an input, that draws squares, triangles, and circles. You will give it a second input to control the size. You'll make a variation that draws stars. On the next page, you'll combine these to do flags or artwork.</p>
+                        <p><img src="/bjc-r_es/img/1-introduction/5pt-and-7pt-stars-and-rectangle-blue.png" height="160" alt="5pt-and-7pt-stars-and-rectangle-blue">  <img src="/bjc-r_es/img/1-introduction/red-and-blue.png"  height="140" alt="red-and-blue">  <img src="/bjc-r_es/img/1-introduction/just-reds.png" height="140" alt="just-reds"> <img src="/bjc-r_es/img/1-introduction/ariel.png" height="140" alt="ariel"> <img src="/bjc-r_es/img/1-introduction/brazil-flag.png" height="160" alt="brazil-flag"></p>
+                        <p><strong>What you will learn:</strong> Abstraction—giving blocks <em>inputs</em> to let them do a wider variety of jobs.</p>
+                    </div>-->
+					<ul>
+                    	<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Learn how to generalize the functionality of a block by introducing input parameters.</li>
+                                <li>Gain some initial familiarity with the concept of <em>abstraction</em> as a big idea in Computer Science.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>This page is one of students' earliest encounters with the concept of <em>abstraction</em> in Computer Science.  Giving an input parameter to a block generalizes its functionality, enabling it to accomplish a wider variety of tasks.  Unless, this first encounter with <em>abstraction</em> is highlighted, most students may miss what a big deal it is.</li>
+                                <li>As a foreshadowing to the upcoming pages, ask students to anticipate how they can further generalize the <code>pinwheel</code> block by introducing more input parameters.</li>
+                                <li>Most students may not yet be quite ready to explore artistic applications of the <code>pinwheel</code> block as shown in the Take It Further.  These are intended as thought-provoking ideas that they can come back to later in the Unit.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+					<strong>Page 4: Modify Your Pinwheel.</strong>
+                    <ul>
+                    	<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Learn how to further generalize the functionality of a block by introducing input parameters for every possible variable aspect of the block function.</li>
+                                <li>Gain some further experience with the concept of <em>abstraction</em> as a big idea in Computer Science.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>It may be a good idea to highlight that in this page students will be further generalizing the <code>pinwheel</code> block by by introducing more input parameters.  Again, this is an example of <em>abstraction</em>.</li>
+                                <li>Some students may have difficulty creating the <var>size</var> parameter in between the <var>branches</var> and the <var>backup</var> parameters.  It may help to point them to the "+" sign in between these two parameters.</li>
+                                <li>
+                                    On the If There Is Time circle problem, some students may need help realizing that a regular polygon with a large number of sides, for example a 30-gon, is a good approximation for a circle.
+                                    
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li>
+					<strong>Page 5: Remix Your Pinwheel.</strong>
+                    <ul>
+                    	<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Learn how to tailor a general-purpose procedure to create other, simpler special-purpose procedures that each do a particular job.</li>
+                                <li>Understand how to draw polygons in Snap<em>!</em>.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>Some students may find writing the <code>polygon</code> block difficult or they may not have intuition about how the code would work.  Encourage them to look at the <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/5a-polygonal-racetracks.html" target="_blank" title="Polygonal Racetracks">Polygonal Racetracks</a> activity linked in an adjacent yellow box.</li>
+                                <li>
+                                    On the If There Is Time circle block-building problem, the students may need help discovering what should the one input be for a <code>circle</code> block.  A natural choice for the single input would be "radius".  The students may need a reminder from the previous page that a regular polygon with a large number of sides, for example a 30-gon, is a good approximation for a circle.  The difficulty in this case will be determining the "side length" of the approximating polygon.  Students can discover this by experimenting or it may be helpful to remind them that for a regular polygon:<br />
+                                    <span class="katex indent">\text{side length} = \frac{\text{perimeter}}{\text{number of sides}} \approx \frac{2 \pi \cdot \text{radius}} {\text{number of sides}}</span>
+                                </li>
+                                <li>Take It Further problem B assumes that the students already mastered the <a href="/bjc-r_es/cur/programming/1-introduction/3-drawing/5a-polygonal-racetracks.html" target="_blank" title="Polygonal Racetracks">Polygonal Racetracks</a> activity.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+					<strong>Page 6: Looping with a Counter.</strong>
+                    <ul>
+                    	<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Learn the similarities and differences between the <code>forever</code>, <code>repeat</code>, and <code>for</code> blocks.</li>
+                                <li>Understand the power of a loop counter.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>
+                                    <img class="imageRight" src="/bjc-r_es/img/icons/import-tools.png" alt="Import Tools" title="Import Tools" />
+                                    The <code>for</code> block is available only after importing tools from the Snap<em>!</em> File menu. This may change in a forthcoming update to Snap<em>!</em>, but for now remind students to <strong>import tools</strong> if a block they seek appears to be missing. 
+                                </li>
+                                <li>Highlight that the <code> for</code> block, in addition to providing looping functionality like to the <code>forever</code> and <code>repeat</code> blocks, also provides access to the individual stages of a loop with the use of a counter; this enhances the possibilities of what can be achieved by looping.</li>
+                                <li>
+                                    <img class="imageRight" src="/bjc-r_es/img/1-introduction/U1ImageVideoAddendum_img/U1L3p5TG-backwardsLoop.png" height="90" alt="for (i) = (10) to (1) {say (i) for (0.5) secs}" title="for (i) = (10) to (1) {say (i) for (0.5) secs}" />
+                                    Most students may not realize that it is possible to loop backwards with the <code>for</code> block by letting the index start from a larger number and end with a smaller number as shown at right. This code will have the sprite count backwards from 10 to 1.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+					<strong>Page 7: Graphics and Art.</strong>
+                    <ul>
+                    	<li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Explore the power of <em>abstraction</em> in a hands-on context through the use of the <code>polygon</code> block with a variety of inputs.</li>
+                                <li>Use coding as a tool for creative and artistic expression.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>The <code>repeat</code> block will be handy, for coding the <code>rectangle</code> block.</li>                                
+                                <li>This project gives the students an opportunity to be creative through coding. The examples in the video are only to provide a starting place. Encourage student initiative and experimentation.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <h3>Assignments:</h3>
+		<!--<div class="todo">Still relevant? --MF, 3/16/17</div>-->
+		<div>
+            <ul>
+                <li>
+                	Assessment Ideas:
+                    <ul>
+                        <li>Submit (through whatever mechanism your class utilizes) a URL for a program that has a sprite that repeats the following until it touches the edge of the stage: move forward 100 units, then turn clockwise a random number of degrees from 90 to 150.</li>
+                        <li>
+                        	Answer the multiple choice question: What will be the result of running the following code? <!--<code>Repeat 6 [Move 80, Turn 60]</code>--><br />
+                            <img class="indent" src="/bjc-r_es/img/1-introduction/repeat-6[move-80-turn-right-60].png" alt="repeat (6){move (80); turn clockwise (60)}" title="repeat (6){move (80); turn clockwise (60)}" />
+                            
+                        	<ol class="indent">
+                            	<li>A hexagon</li>
+                                <li>A triangle</li>
+                                <li>A square</li>
+                                <li>A pentagon</li>
+                            </ol>
+						</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+			
+		<h3>Solutions:</h3>
+		<div>
+            <ul>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p1%20Exploring%20Motion%20(answer%20file)&editMode" target="_blank" title="Solution to Page 1: Exploring Motion">Page 1: Exploring Motion</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-AngleExperiments1&editMode" target="_blank" title="Solution to Page 2: Angles and Turning 1">Page 2: Angles and Turning 1</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-AngleExperiments2&editMode" target="_blank" title="Solution to Page 2: Angles and Turning 2">Angles and Turning 2</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-Pinwheel&editMode" target="_blank" title="Solution to Page 3: Blocks with Inputs">Page 3: Blocks with Inputs</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-Pinwheel2&editMode" target="_blank" title="Solution to Page 4: Modify Your Pinwheel">Page 4: Modify Your Pinwheel</a></li>
+                <div class="todo">All 3 of the Page 5 Racetrack solutions have green flags in them, but that's not an important part of these projects, and they should be removed from the solution files. --MF, 3/19/18</div>
+				<li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-Pinwheel3&editMode" target="_blank" title="Solution to Page 5: Remix Your Pinwheel">Page 5: Remix Your Pinwheel</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L2p1%20Inscribe%20a%20Circle%20in%20a%20Square%20(answer%20file)&editMode" target="_blank" title="Solution to Page 5: Circle in a Square">Take It Further: Circle in a Square</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p5RaceTrack1&editMode" target="_blank" title="Solution to Page 5: Racetrack1">Racetrack1</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p5RaceTrack2&editMode" target="_blank" title="Solution to Page 5: Racetrack2">Racetrack2</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p5RaceTrack3&editMode" target="_blank" title="Solution to Page 5: Racetrack3">Racetrack3</a></li>
+                <div class="todo">
+                    <p>The <a href="https://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p6LoopingwithCounter(answer%20file)&editMode" target="_blank">U1L3p6LoopingwithCounter(answer file)</a> breaks the niceness of Snap<em>!</em> block names and our general rule for block naming. The <code>housekeeping () () ()</code> block should be named <code>housekeeping, x-position: () y-position: (), direction: ()</code> and <code>draw squiral () ()</code> should be renamed as well as its  variables <var>input1</var> and <var>input2</var>, which should be more meaningful too. Same for other blocks: <code>nest squares</code>, <code>nest polygons</code>, and <code>draw concentric squares</code>. The code in this file should also be "cleaned up." --MF, 3/19/18</p>
+                    <p>The same idea applies in <a href="https://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-PinwheelArtAnimation2&editMode" target="_blank">U1L3-PinwheelArtAnimation2</a>. And why are there 2 local blocks? There is only one sprite; shouldn't they be normal blocks? Also, the green flag should be removed from this solution. --MF, 3/19/18</p>
+                    <p>All three issues (block naming, local blocks, green flag block) also appear in <a href="https://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-PinwheelArtAnimation1&editMode" target="_blank">U1L3-PinwheelArtAnimation1</a>. --MF, 3/19/18</p>
+                    <p>Lastly, the filenames are mixed up: U1L3-PinwheelArtAnimation2 is for Animation 1 and U1L3-PinwheelArtAnimation1 is for Animation 2. --MF, 3/19/18</p>
+                </div>
+		<li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p6LoopingwithCounter(answer%20file)&editMode" target="_blank" title="Solution to Page 6: Looping with a Counter">Page 6: Looping with a Counter</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-PinwheelArtAnimation2&editMode" target="_blank" title="Solution to Page 6/TIF: Pinwheel Animation 1">Take It Further: Pinwheel Animation 1</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3-PinwheelArtAnimation1&editMode" target="_blank" title="Solution to Page 6/TIF: Pinwheel Animation 2">Take It Further: Pinwheel Animation 2</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L3p7Graphics%26Art%20(answer%20file)&editMode" target="_blank" title="Solution to Page 7: Graphics and Art">Page 7: Graphics and Art</a></li>
+            </ul>
+        </div>
+        
+        
+        <!--<h3>Resources:</h3>
+        <div>
+            You may wish to use some of these artists to motivate the lab:<ul>
+                <li><a href="https://www.google.com/search?q=Josef+Albers&tbm=isch" target="_blank">Josef Albers</a></li>
+                <li><a href="https://www.google.com/search?q=Vassily+Kandinsky&tbm=isch" target="_blank">Vassily Kandinsky</a></li>
+                <li><a href="http://attakwami.com/work/" target="_blank">Atta Kwami</a></li>
+                <li><a href="https://www.google.com/search?q=Piet+Mondrian&tbm=isch" target="_blank">Piet Mondrian</a></li>
+                <li><a href="https://www.google.com/search?q=Theo+van+Doesburg&tbm=isch" target="_blank">Theo van Doesburg</a></li>
+                <li><a href="https://www.google.com/search?q=Kazimir+Malevich&tbm=isch" target="_blank">Kazimir Malevich</a></li>
+            </ul>
+        </div>-->
+
+		<h3>Correlation with AP CS Principles Framework:</h3>
+        <div class="apStandards">
+        	<!--<h4>Computational Thinking Practices:</h4>
+            <ul>
+                <li><strong>P6 Collaborating</strong> Collaborate with another student in solving a computational problem.</li>
+                <li><strong>P6 Collaborating</strong> Exchange knowledge and feedback with a partner or team member.</li>
+            </ul>-->
+            <div class="todo">
+            	<p>The ones crossed out below are arguably things we <em>should</em> teach in this lab, but are never in fact mentioned explicitly.  Do we want a new TG-lab-page feature for things that the teacher should teach explicitly <em>after</em> students do the lab?  Also, BTW, prob. 1.3.2.2c-d and 1.3.2.4 defeat the whole purpose of the sequence of pages 1-5 by requiring building polygons prematurely.--bh</p>
+            	<p>Thanks Brian, I moved them into this TODO and put spaces in the standards so that the <a href="/bjc-r_es/utilities/site-crawler.php" target="_blank">crawler</a> will stop picking these up. Please feel free to make the changes you suggest above, but please be sure that someone reviews them. --MF, 7/20/17</p>
+                <ul>
+                    <s><li><strong>L O 5.2.1</strong> Explain how programs implement algorithms. [P3]</li></s>
+                    <s><li><strong>E K 2.2.1A</strong> The process of developing an abstraction involves removing detail and generalizing functionality.</li>
+                    <li><strong>E K 2.2.1B</strong> An abstraction extracts common features from specific examples in order to generalize concepts.</li>
+                    <li><strong>E K 2.2.1C</strong> An abstraction generalizes functionality with input parameters that allow software reuse.</li></s>
+                    <s><li><strong>E K 5.1.3B</strong> Collaboration facilitates multiple perspectives in developing ideas for solving problems by programming.</li></s>
+                    <s><li><strong>E K 5.1.2C</strong> Incrementally adding tested program segments to correct working programs helps create large correct programs.</li></s>
+                    <s><li><strong>E K 5.3.1E</strong> Parameterization can generalize a specific solution.</li></s>
+                    <s><li><strong>E K 5.4.1B</strong> Duplicated code can make it harder to reason about a program.</li>
+                    <li><strong>E K 5.4.1C</strong> Meaningful names for variables and procedures help people better understand programs.</li>
+                    <li><strong>E K 5.4.1D</strong> Longer code blocks are harder to reason about than shorter code blocks in a program.</li></s>
+                </ul>
+			</div>
+            <h4>Enduring Understandings:</h4>
+            <div class="todo">Students use the abstraction of a “pinwheel” drawing algorithm to facilitate (<strong>EU 5.3</strong>) the writing of programs with a higher level of abstraction (<strong>EU 2.2</strong>) that call the “pinwheel” algorithm. This lab builds toward these EUs by focusing on custom procedures. The lab requires students to create several short scripts (some of which accept input values) and to use scripts within other scripts.</div>
+            <ul>
+            	<li><strong>EU 2.2</strong> Multiple levels of abstraction are used to write programs or create other computational artifacts.</li>
+            	<!--<li><strong>E U 4.1</strong> Algorithms are precise sequences of instructions for processes that can be executed by a computer and are implemented using programming languages.</li>
+				<li><strong>E U 5.1</strong> Programs can be developed for creative expression, to satisfy personal curiosity, to create new knowledge, or to solve problems (to help people, organizations, or society).</li>
+                <li><strong>E U 5.2</strong> People write programs to execute algorithms.</li>-->
+                <div class="comment">EU 5.2 moved here from U5L1</div>
+                <li><strong>EU 5.2</strong> People write programs to execute algorithms.</li>
+                <li><strong>EU 5.3</strong> Programming is facilitated by appropriate abstractions.</li>
+			</ul>
+			<h4>Learning Objectives:</h4>
+			<div class="todo">Need to rewrite paragraph with current LO list. --MF, 2/28/18</div>
+			<div class="todo">Students develop the abstraction (<strong>LO 2.2.1</strong>) of a “pinwheel” procedure to manage complexity (<strong>LO 5.3.1</strong>) in a program that draws designs with multiple shapes. They also learn to debug their programs (<strong>LO 5.4.1</strong>) and how to use debugging practices to develop bug-free programs (<strong>LO 5.1.2</strong>). </div>
+            <ul>
+                <div class="todo">Moved from 6.1 TG. Definitely covered by an activity in this lab. --MF, 12/18/17
+                    <ul>
+                    	<li><strong>LO 1.3.1</strong> Use computing tools and techniques for creative expression. [P2]</li>
+                    </ul>
+                </div>
+                <!--not in endorsement docs
+                <li><strong>L O 4.1.1</strong> Develop an algorithm for implementation in a program. [P2]</li>
+                <li><strong>L O 5.1.3</strong> Collaborate to develop a program. [P6]</li>
+                -->
+        		<li><strong>LO 1.2.4</strong> Collaborate in the creation of computational artifacts. [P6]</li>
+                <li><strong>LO 2.2.1</strong> Develop an abstraction when writing a program or creating other computational artifacts. [P2]</li>
+                <li><strong>LO 5.3.1</strong> Use abstraction to manage complexity in programs. [P3]</li>
+                <li><strong>LO 5.4.1</strong> Evaluate the correctness of a program. [P4]</li>
+            </ul>
+            <h4>Essential Knowledge:</h4>
+            <ul>
+                <li><strong>EK 4.1.1A</strong> Sequencing, selection, and iteration are building blocks of algorithms.</li>
+                <!--MOVE TO L2
+                <li><strong>E K 4.1.1B</strong> Sequencing is the application of each step of an algorithm in the order in which the statements are given.</li>-->
+                <li><strong>EK 4.1.1D</strong> Iteration is the repetition of part of an algorithm until a condition is met or for a specified number of times.</li>
+                <li><strong>EK 4.1.1E</strong> Algorithms can be combined to make new algorithms.</li>
+                <li><strong>EK 4.1.1F</strong> Using existing correct algorithms as building blocks for constructing a new algorithm helps ensure the new algorithm is correct.</li>
+                <li><strong>EK 4.1.2G</strong> Every algorithm can be constructed using only sequencing, selection, and iteration.</li>
+                <li><strong>EK 5.1.3F</strong> Effective communication between participants is required for successful collaboration when developing programs.</li>
+                <li><strong>EK 5.2.1A</strong> Algorithms are implemented using program instructions that are processed during program execution.</li>
+                <li><strong>EK 5.2.1B</strong> Program instructions are executed sequentially.</li>
+                <li><strong>EK 5.2.1C</strong> Program instructions may involve variables that are initialized and updated, read, and written.</li>
+                <li><strong>EK 5.3.1A</strong> Procedures are reusable programming abstractions.</li>
+                <li><strong>EK 5.3.1B</strong> A procedure is a named grouping of programming instructions.</li>
+                <li><strong>EK 5.3.1C</strong> Procedures reduce the complexity of writing and maintaining programs.</li>
+                <li><strong>EK 5.3.1D</strong> Procedures have names and may have parameters and return values.</li>
+                <li><strong>EK 5.3.1F</strong> Parameters generalize a solution by allowing a procedure to be used instead of duplicated code.</li>
+                <li><strong>EK 5.3.1G</strong> Parameters provide different values as input to procedures when they are called in a program.</li>
+				<li><strong>EK 5.4.1E</strong> Locating and correcting errors in a program is called debugging the program.</li>
+            </ul>
+        </div>	
+        
+        <div class="todo">
+            Old Mathematical Notes:
+            <ul>
+            	<li>
+                    <strong>Mathematics Note: Direction.</strong> Snap! reports the direction that a sprite is facing using a system similar to that used by a magnetic compass:
+                    <ul>
+                        <li>0 is straight up, facing the top of the screen</li>
+                        <li>90 faces the right-hand side of the screen</li>
+                        <li>180 points "due south"</li>
+                        <li>270 faces the left-hand side of the screen</li>
+                    </ul>
+                    The inputs to the <code>point in direction</code> block can be any number, and this gives an opportunity to talk about different inputs to <code>point in direction</code> that produce the same effect. Try, for example, turning on the <var>direction</var> reporter in the Motion palette (it reports the direction of the sprite), but try using <code>point in direction</code> with an input of -20 and then again with an input of 340. The sprite points the same way&mdash;nothing changes&mdash;but direction reports -20 and then 340. Clearly, -20 &ne; 340, but they differ by 360:
+                    <span class="katex-block">340 = -20 + 360</span>
+                    Sprite direction is determined only up to multiples of 360, because a complete turn is 360&deg; and that brings you back to where you started. So, using inputs to <code>point in direction</code> that are multiples of 360:
+                    <span class="katex-block">0,360,720,1080,...</span>
+                    will all bring you back to pointing straight up, and similarly, inputs that are, say, 75 more than these:
+                    <span class="katex-block">75,75+360,75+720,75+1080,...</span>
+                    <img class="imageRight" src="/bjc-r_es/img/1-introduction/75-equals-435-mod-360-reporting.png" alt="(75) = ((435) mod (360)) reporting true" title="(75) = ((435) mod (360)) reporting true" />
+                    will all do the same thing as <code>point in direction</code> with an input of 75. The mathematical shorthand for this is to say something like "75 is the same as 435 <em>modulo</em> 360, which can be expressed in Snap<em>!</em> as shown at right. (The word modulo was introduced by Gauss as a way to say "except for multiples of." These days, the meaning is often used in other ways, like "The game will take place today, modulo rain.")
+                </li>
+                <li>
+                    <strong>Mathematics Note: Circles.</strong> You sometimes hear people say "a circle is a polygon with an infinite number of sides." This isn't true in any precise sense, but it is true that a circle can be <em>approximated</em> by a polygon with many sides, each very short in length. This is similar to what children do when the walk around a circle&mdash;they take many small steps. And this is how Snap<em>!</em> models circles&mdash;it creates a polygon with many small turns and steps. For example:<br />
+                    <img class="indent" src="/bjc-r_es/img/1-introduction/circle-script.png" alt="repeat (360) [move (1) steps, turn right (1) degrees]" title="repeat (360) [move (1) steps, turn right (1) degrees]" />
+                    <img class="indent noshadow" src="/bjc-r_es/img/1-introduction/circle.png" alt="sprite drawing a circle" title="sprite drawing a circle" /><br />
+                    This looks very much like a circle, but it's really a polygon with 360 sides, all of length 1 step.<br />In particular, you can apply facts about circles to these Snap<em>!</em> approximations, and they work quite well. For example, in the Take it Further challenge, the diameter of the red circle is 100. The circumference (perimeter) of a circle is &pi; times its diameter. If your students know this fact, then they can reason that the circumference of the red circle is 100&pi;. Using the approximation 3.14 for &pi;, the circumference is approximately 314. So, if we want to cover this distance in 360 steps, the step size should be <span class="katex">\frac{314}{360}</span>. Snap<em>!</em> can do the calculation for us.<br />
+                    <img class="indent" src="/bjc-r_es/img/1-introduction/circle-squared-script.png" alt="set pen color to (blue), repeat (4) [move (100) steps, turn right (90) degrees], move (50) steps, set pen color to (red), repeat (360) [move ((314) / (360)) steps, turn right (1) degrees]" title="" />
+                    <img class="indent noshadow" src="/bjc-r_es/img/1-introduction/circle-squared.png" alt="sprite drawing a square and then a circle" title="sprite drawing a square and then a circle" />
+                </li>
+			</ul>
+        </div>
+        
+        
+    </body>
+</html>

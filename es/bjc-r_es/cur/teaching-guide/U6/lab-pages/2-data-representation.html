@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r_es/llab/loader.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+		<title>Unit 6 Lab 2 Teacher Guide</title>
+	</head>
+
+	<body>
+		<h2>Lab 2: Data Representation and Compression</h2>
+		<div class="todo">Do we still need the commented out text at the bottom? --MF, 2/26/18</div>
+		<p>This lab addresses representation of digital data as binary sequences. The first two pages introduce bits, bytes, and binary sequences and how they are used to store text, images, and other data. The following two pages explain how a binary sequence can represent numbers&mdash;both integers and non-integers&mdash;and in particular, explain floating point as an approximation for real numbers. These are followed by three pages covering two common number representations: binary and hexadecimal. Binary and hexadecimal (hex) are place value systems just like decimal representation; binary uses only two digits (0 and 1) instead of ten (0 through 9), and hexadecimal uses sixteen digits (0-9 and A-F). Students learn to translate between hex and binary and about the use of hex in RGB colors. The last page addresses data compression and the difference between lossy and lossless data compression formats, which lose and preserve original information respectively.</p>
+        <p>Note that there's no such thing as a "binary <em>number</em>" or a "hexadecimal <em>number</em>." The way we represent a number—as XXXI<sub>Roman</sub> or 31<sub>10</sub> or 11111<sub>2</sub> or 1F<sub>16</sub> or "thirty-one" or "treinta y uno"—is language or notation. The number itself is the same regardless of how we express it. It helps the distinction to say "binary <em>numerals</em>" or "binary <em>representation</em>" instead of "binary numbers." Students understand the conversions better when they remain clear that only the notation, not the <em>number,</em> changes. Explicitly making the analogy with Roman numerals may help; students are likely to understand and be able to extend from the idea that XXXI and 31 are the same number written different ways.</p>
+		
+
+		<h3>Pacing</h3>
+		<div>
+			The 8 lab pages could be split across 4-8 days (<strong>185-370 minutes</strong>). Expected times to complete follow:
+			<ul>
+				<li>25-50 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/1-bits.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Bits">Bits</a></li>
+				<li>25-50 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/2-sequences.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Binary Sequences">Binary Sequences</a></li>
+				<li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/3-representing-numbers.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Representing Whole Numbers">Representing Whole Numbers</a></li>
+				<li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/4-floating-point.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Floating Point">Floating Point</a></li>
+				<li>30-60 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/5-binary.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Binary Representation">Binary Representation</a></li>
+				<li>25-50 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/6-hexadecimal.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Hexadecimal Representation">Hexadecimal Representation</a></li>
+				<li>30-60 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/7-more-hex.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="More About Hexadecimal">More About Hexadecimal</a></li>
+				<li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/6-computers/2-representation-compression/8-compression.html?topic=nyc_bjc%2F6-how-computers-work.topic&course=bjc4nyc.html&novideo&noassignment" title="Data Compression">Data Compression</a></li>
+			</ul>
+		</div>
+
+		
+        <!--<h3>Prepare</h3>
+		<div>
+			<ul>
+				<li></li>
+			</ul>
+		</div>-->
+
+
+		<h3>Lab Pages</h3>
+		<div>
+			<ul>
+				<li>
+					<strong>Page 1: Bits.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Understand that data is represented using bits.</li>
+								<li>Understand that <em>n</em> bits are needed to represent 2<sup><em>n</em></sup> values.</li>
+                            </ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>Don't talk about "binary" on this page. Students should not be thinking about place value but only about questions such as "how many bits do you need to represent the colors of the rainbow?" or "how many bits do you need to represent the months of the year?"</li>
+                                <li>
+                                    Be sure students understand the tip in the orange box before moving on to exercise 7, "how many values can be represented in a 64-bit word?" Every ten bits of multiplies the number of possible values by about 1000; so 60 bits would offer a thousand thousand thousand thousand thousand thousand (six of them) possible values, and the remaining four bits represent another factor of 16. If your students are already proficient with exponentials, they may not need this trick and can instead see that doubling from 32 to 64 bits <em>squares</em> the number of values, so the answer is about 4 billion squared or 16 billion billion (16 quintillion).
+                                    <ul>
+                                        <li>Instead of trying to make sense of thousand thousand thousand thousand thousand thousand, they can just count off six thousand-group names: thousand, million, billion, trillion, quadrillion, quintillion.</li>
+                                    </ul>
+                                </li>
+                                <li>The student page says that 8-bit bytes are used mainly to represent text characters, and that's true, but for representing emoji, mathematics, and languages with accents or ideograms, more than one byte per character may be required. These details are presented as optional reading hidden in a yellow box between problems 9 and 10.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 2: Binary Sequences.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+                                <li>Understand that the meaning of a string of bits depends on the context in which it is used.</li>
+                            </ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>This page uses the phrase "binary sequences" as a technical term but otherwise doesn't talk about binary. </li>
+                                <li>Students may reasonably ask, "Is a kilobyte 1000 bytes, or 1024 bytes?" This turns out to be a complicated question: If we're talking about the RAM, a kilobyte is 1024 bytes, but if we're talking about a disk, it's 1000 bytes. In an attempt to resolve this ambiguity, the International Electrotechnical Commission has introduced new metric-ish names for the powers of two wherein 1024 bytes a "kibibyte" or KiB. These new power-of-two names all have "bi" replacing the second syllable of the metric name: kibi, mebi, gibi, tebi, pebi, etc. This is covered in the edX BJC video <a href="https://www.youtube.com/watch?v=9x1hMBT3hkU&index=4&list=PLno6_GYnQv_SOQ7nFjItIdn0Xa9IV4VmH" target="_blank" title="Data: Data and Information Part 3">Data: Data and Information Part 3</a>, but you needn't go into any of this with students unless someone asks.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 3: Representing Whole Numbers.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+                                <li>Understand that the choice of representation has implications for the kinds of numbers that can be stored and how precisely they can be stored. </li>
+                                <li>Understand that the standard mechanism of storing numbers, fixed width representation, limitations the size of a number. </li>
+                                <li>Understand that fixed width representation has killed people and that better representations (such as bignums) are available.</li>
+							</ul>
+						</li>
+		
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                            	<li>We discuss only nonnegative integers, except to say that half the integers are negative so the maximum value in a single word is 2<sup>63</sup> rather than 2<sup>64</sup>.</li>
+                        		<li>After students work through the lab page, you might review by asking, "Why did Snap<em>!</em> display <code>20!</code> in ordinary, whole number representation but <code>30!</code> in scientific notation (with bignums turned off)?"</li>
+                                <li>Note the different meanings of the word binary. Your students may notice that the question "What's the <em>first</em> integer whose factorial doesn't fit in a word?" can be answered by a binary search between 20 (known to fit) and 30 (known not to fit). Students learned binary search in <a href="/bjc-r_es/cur/programming/5-algorithms/1-searching-lists/2-improving-search.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Analyzing and Improving Searches">Unit 5 Lab 1: Analyzing and Improving Searches</a><!--, between 20 (known to fit) and 30 (known not to fit)-->. This is a different use of the word <em>binary</em> from the use in "binary sequences" or "binary representation." In "binary search," the word <em>binary</em> refers to splitting the range being searched into two equal parts. You don't need to raise this issue if it does not come up.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 4: Floating Point.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+                                <li>Understand that floating point is a representation for storing numbers that is analogous to scientific notation. </li>
+                                <li>Understand that, in many languages, if a whole number is above a certain size, it will be stored as a floating point value and therefore be rounded. </li>
+		
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                                <li>This page includes rational numbers. In case it comes up, note that any rational number can be represented <em>exactly</em> as a ratio, a fraction (a pair of integers, e.g., 1/3), but irrational numbers cannot.</li>
+								<li>You don't have to say this to students, but knowing it may help you answer their questions: Since the floating point format has a finite number of bits, and since irrational numbers require infinitely many digits, <em>every</em> representable number is rational. Irrational numbers can only be <em>approximated</em> in floating point. (Note that the converse isn't true: not every rational number is representable.)</li>
+								<li>This page explains <em>that</em> other data types, including lists, are represented as binary sequences but not <em>how</em> they are represented (e.g., pointers to memory addresses).</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 5: Binary Representation.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Understand how numbers are stored in binary notation.</li>
+                                <li>Translate numbers between binary and decimal notations.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                                <li>You may be tempted to teach students to do binary <em>arithmetic</em>, but the goal is for students to learn to translate between representations. Binary arithmetic is not required for the AP exam and may confuse students learning translation, which is likely to appear on the exam. </li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 6: Hexadecimal Representation.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Understand how numbers are stored in hexadecimal notation. </li>
+                                <li>Understand how to translate numerals between hexadecimal and decimal notations.</li>
+                                <!--<li>(+) Develop intuition with number bases in general.</li>-->
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                                <li>"Hexadecimal" is often abbreviated just to "hex." Either is fine to use generally, but students should recognize both.</li>
+                                <li>Base 16 is important only as an abbreviation for the underlying binary. You don't necessarily have to say that to students, but don't allow a mystique to develop around hex. Hex is just a notation that people find convenient in a few computing contexts (<em>very</em> few, actually; RGB and IPv6 pretty much exhaust them).</li>
+                                <li>You may be tempted to teach hex arithmetic, but as with binary, the goal is for students to learn to translate&mdash;not calculate. </li>
+								<li>The two videos about number representations in the edX BJC Videos section below also cover hex.</li>
+                        	</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 7: More About Hexadecimal.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Understand how to translate numerals between hexadecimal and binary notations.</li>
+                                <li>Understand that colors can be represented using hexadecimal notation. </li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                            	<li>Consider translating among the three representations (binary, decimal, and hexadecimal) for a few numbers together at the board.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 8: Data Compression.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Understand lossless vs. lossy compression and when each is appropriate.</li>
+								
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>We use run-length encoding as an example of lossless compression because this algorithm, unlike the one used for PNG files, is  easy for students to understand. If you want to present a similarly simple algorithm for lossy compression, ask students to consider reducing the set of possible colors by restricting each of red, green, and blue to the (hexadecimal) values 00, 11, 22, ... dd, ee, and ff. For example, the color "cinnamon" would be rounded to dd6622, and then stored in files as d62. (Browsers actually do accept these three-hex-digit color codes.) Each color number would then take two bytes (including transparency) instead of four. You can see that that <span style="background:#d62">d62 is a little different from</span> <span style="background:#d2691e">the real "cinnamon" (d2691e)</span>, but this restriction is hardly noticeable in real pictures:<br />
+                                    <img class="indent" src="/bjc-r_es/img/6-computers/pond-small-palette.png" alt="pond with reduced color palette" title="pond with reduced color palette"><br />
+                                    <div class="endnote">
+                                        <a href="#hint-target" data-toggle="collapse" title="Snap! code for the compressed picture">By the way, this compressed picture was made using Snap<em>!</em>'s Pixels library.</a>
+                                        <div id="hint-target" class="collapse">
+                                        	<img class="indent" height="132" src="/bjc-r_es/img/6-computers/small-palette script pic.png" alt="small-palette-script">
+                                        </div>
+                                    </div>
+                                </li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+
+		<h3>Assignments</h3>
+		<div>
+			<ul>
+                <li><a href="https://docs.google.com/document/d/1UO0rt_dUtWxPE9NtO1BTie_lNP7t1uVwZfNzZ0_rjc0/edit#heading=h.hx8tojz3k5yv" target="_blank" title="Unit 6 Lab 2 Assessment">Unit 6 Lab 2 Assessment</a> for formative use</li>
+                <li><a href="https://drive.google.com/open?id=1jM7crOPwVsmqGmdLm7nK6QQsd0CSApTBmU1w7wOdNJ0" target="_blank" title="Unit 6 Lab 2 Assessment solutions">Unit 6 Lab 2 Assessment solutions</a></li>
+			</ul>
+		</div>
+
+			
+		<h3>edX BJC Videos:</h3>
+		<div class="sidenote">If your connection blocks YouTube, watch the videos here: <a href="http://scratch.mit.edu/discuss/youtube/SqhbDWVOLvk" target="_blank" title="Abstraction: Numbers">Abstraction: Numbers</a>, <a href="http://scratch.mit.edu/discuss/youtube/rVIq_bol1Es" target="_blank" title="Abstraction: Base Conversion">Abstraction: Base Conversion</a>. </div>
+        <div>
+            <ul>
+            	<li>
+                    <a href="https://www.youtube.com/watch?v=SqhbDWVOLvk?rel=0" target="_blank" title="Abstraction: Numbers">Abstraction: Numbers</a>
+                    <ul>
+                        <li><a href="https://www.youtube.com/embed/SqhbDWVOLvk?rel=0&end=192" target="_blank" title="0:00 to 3:14">0:00 to 3:14</a> covers converting binary to decimal (most related to page 5)</li>
+                        <li><a href="https://www.youtube.com/embed/SqhbDWVOLvk?rel=0&start=192&end=295" target="_blank" title="3:12 to 4:55">3:12 to 4:55</a> covers converting hex to decimal (most related to page 6)</li>
+                        <li><a href="https://www.youtube.com/embed/SqhbDWVOLvk?rel=0&start=295" target="_blank" title="4:55 to the end">4:55 to the end</a> compares these notations and covers examples of their uses (most related to page 7)</li>
+                        <li>If you use this with students, you may wish to validate students' mathematical experience by remarking that not everyone learns base 10 place values in kindergarten, as stated at 1:07.</li>
+                        <li>There is a mistake in the video at 2:51. If you share this video with students, you might tell them that there is a mistake somewhere and ask them to watch carefully to find it.</li>
+                    </ul>
+                </li>
+                <li>
+                	<a href="https://www.youtube.com/watch?v=rVIq_bol1Es?rel=0" target="_blank" title="Abstraction: Base Conversion">Abstraction: Base Conversion</a>
+                    <ul>
+                        <li><a href="https://www.youtube.com/embed/rVIq_bol1Es?rel=0&end=194" target="_blank" title="0:00 to 3:14">0:00 to 3:14</a> covers converting decimal to binary (most related to page 5)</li>
+                        <li><a href="https://www.youtube.com/embed/rVIq_bol1Es?rel=0&start=194&end=278" target="_blank" title="3:14 to 4:38">3:14 to 4:38</a> covers converting decimal to hex (most related to page 6)</li>
+                        <li><a href="https://www.youtube.com/embed/rVIq_bol1Es?rel=0&start=278" target="_blank" title="4:38 to the end">4:38 to the end</a> covers converting between binary and hex (most related to page 7)</li>
+                        <li>At this point in the course, this is not your student's first algorithm, as stated at 0:13.</li>
+                        <li>This video uses the notation "0b" and "0x" at the beginning of a number to indicate that the number is represented in binary or in hex (e.g., 0b1101 or 0xA5). This curriculum uses "<sub>2</sub>" or "<sub>16</sub>" at the end of the number (e.g., 1101<sub>2</sub> or A5<sub>16</sub>). Both are correct. Some programming lanaguges use the "0b" and "0x" notation, whereas subscripts are more commonly used in text written for humans.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        
+		<h3>Solutions</h3>
+        
+		<div>
+        	<ul>
+            	<li><a href="/bjc-r_es/cur/teaching-guide/U6/lab-pages/2b-data-representation-solutions.html" title="Unit 6 Lab 2 Solutions">Unit 6 Lab 2 Solutions</a></li>
+            </ul>
+        </div>
+        
+			
+		<h3>Correlation with AP CS Principles Framework:<a name="AP" class="anchor">&nbsp;</a></h3>
+		<div class="apStandards">
+			<h4>Enduring Understandings:</h4>
+            <p>Students learn about the abstractions that represent numbers and translate among binary, decimal, and hexadecimal notation (<strong>EU 2.1</strong>). This lab builds toward this EU by focusing on ideas of binary data, sequences, and representation. The lab offers explanation of floating point, binary and hexadecimal representations, and the use of hex in RGB color. The lab also requires students to explore factorial outputs both with and without bignums and to convert between binary, decimal, and hexadecimal representation.</p>
+            <ul>
+				<li><strong>EU 2.1</strong> A variety of abstractions built on binary sequences can be used to represent all digital data.</li>
+            </ul>
+            <h4>Learning Objectives:</h4>
+            <p>Students have been using procedural abstraction since the beginning of the year and abstract data types since Unit 2. Here, after talking about some bit-level abstractions, students reflect on the similarities and differences between high-level and low-level abstractions (<strong>LO 2.1.1</strong>). After learning about binary representations for numbers, text strings, and colors, students are asked to compare the virtues of hex RGB codes vs. browser color names in terms of space required and usability (<strong>LO 2.1.2</strong>).</p>
+            <ul>
+				<li><strong>LO 2.1.1</strong> Describe the variety of abstractions used to represent data. [P3]</li>
+				<li><strong>LO 2.1.2</strong> Explain how binary sequences are used to represent digital data. [P5]</li>
+            </ul>
+            <h4>Essential Knowledge:</h4>
+			<div class="todo">EK 2.1.1G is not listed on any student page. --MF, 2/26/18</div>
+			<ul>
+                <li><strong>EK 2.1.1A</strong> Digital data is represented by abstractions at different levels.</li>
+                <li><strong>EK 2.1.1B</strong> At the lowest level, all digital data are represented by bits.</li>
+                <li><strong>EK 2.1.1C</strong> At a higher level, bits are grouped to represent abstractions, including but not limited to numbers, characters, and color.</li>
+                <li><strong>EK 2.1.1D</strong> Number bases, including binary, decimal, and hexadecimal, are used to represent and investigate digital data.</li>
+                <li><strong>EK 2.1.1E</strong> At one of the lowest levels of abstraction, digital data is represented in binary (base 2) using only combinations of the digits zero and one.</li>
+                <li><strong>EK 2.1.1F</strong> Hexadecimal (base 16) is used to represent digital data because hexadecimal representation uses fewer digits than binary.</li>
+                <li><strong>EK 2.1.1G</strong> Numbers can be converted from any base to any other base.</li>
+                <li><strong>EK 2.1.2A</strong> A finite representation is used to model the infinite mathematical concept of a number. </li>
+                <li><strong>EK 2.1.2B</strong> In many programming languages, the fixed number of bits used to represent characters or integers limits the range of integer values and mathematical operations; this limitation can result in overflow or other errors.</li>
+                <li><strong>EK 2.1.2C</strong> In many programming languages, the fixed number of bits used to represent real numbers (as floating point numbers) limits the range of floating point values and mathematical operations; this limitation can result in round off and other errors.</li>
+                <li><strong>EK 2.1.2D</strong> The interpretation of a binary sequence depends on how it is used.</li>
+                <li><strong>EK 2.1.2E</strong> A sequence of bits may represent instructions or data.</li>
+                <li><strong>EK 2.1.2F</strong> A sequence of bits may represent different types of data in different contexts.</li>
+                <li><strong>EK 2.2.3K</strong> Lower-level abstractions can be combined to make higher level abstractions, such as short message services (SMS) or email messages, images, audio files, and videos.</li>
+                <li><strong>EK 3.3.1C</strong> There are trade offs in using lossy and lossless compression techniques for storing and transmitting data.</li>
+                <li><strong>EK 3.3.1D</strong> Lossless data compression reduces the number of bits stored or transmitted but allows complete reconstruction of the original data.</li>
+                <li><strong>EK 3.3.1E</strong> Lossy data compression can significantly reduce the number of bits stored or transmitted at the cost of being able to reconstruct only an approximation of the original data.</li>
+                <li><strong>EK 5.5.1A</strong> Numbers and numerical concepts are fundamental to programming.</li>
+                <li><strong>EK 5.5.1B</strong> Integers may be constrained in the maximum and minimum values that can be represented in a program because of storage limitations.</li>
+                <li><strong>EK 5.5.1C</strong> Real numbers are approximated by floating point representations that do not necessarily have infinite precision.</li>
+                <li><strong>EK 5.5.1E</strong> Logical concepts and Boolean algebra are fundamental to programming.</li>
+            </ul>
+		</div>		
+
+
+	</body>
+</html>
+
+
+
+
+		<!-- I don't think this section adds much given the following section. --MF 2017-01-04
+		<h3>Students will:</h3>
+		<div class="sidenoteBig">
+			<strong>Looking Ahead</strong>
+			<ul>
+				<div class="todo">This is now done in 4.1.4 --MF 2017-01-04</div>
+            	<li>Students will create decimal-to-binary and binary-to-decimal converter blocks in <a href="/bjc-r_es/topic/topic.html?topic=nyc_bjc/7-recursive-reporters.topic" target="_blank">Unit 7, Recursive Reporters</a>.</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+                <li>Extend their understanding of number representations to include binary and hexadecimal.</li>
+                <li>Develop a beginning understanding of floating point.</li>
+                <!--<li>Explore hexadecimal representation and its use in RGB color and IP addresses.</li>- ->
+			</ul>
+		</div> -->
+			  
+
+		<!--<h3>Goals for the Lab:</h3>
+        <div>
+        	<ul>
+            	<li>
+                    <strong>Page 5: Binary Timer Project.</strong>
+                    <ul>
+                    	<li>Understand algorithm(s) that are used to convert from decimal notation to binary notation.</li>
+                        <li>Develop intuition about how decimal and binary representations relate to each other.</li>
+                        <li>Implement timer that displays elapsed time in both decimal and binary notations.</li>
+                        <li>Write code to supplement and extend existing code.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>-->
+        
+        
+		<!-- The first two of these games are no longer available and the third is really hard to play. --MF 12/15/16
+        <h3>Related Resources:</h3>
+		<div>
+        	<ul>
+                <li>
+                    Students do not need to become proficient at converting among representations—not for the AP, not for careers in programming, not for anything—but some students find these notational changes interesting and may <em>like</em>  to play one or more of the following number representation games <em>on their own time</em>. The games (or any other focus on skill at conversion) should not become a distraction  from the essential content of the unit.
+                    <ul>
+                    	<li><a href="http://forums.cisco.com/CertCom/game/binary_game_page.htm" target="_blank">Cisco Binary Game</a>: a base 10 to base 2 board-clearing game. This game  does have an element of time pressure and might take few minutes to figure out; the instructions are not perfect but helpful.</li>
+                        <li><a href="http://people.sinclair.edu/nickreeder/flash/binhex.htm" target="_blank">Bin-Hex Challenge</a>: a base 2 to base 16 memory-style game. This game has no time pressure, so it might be the most accessible of the three. Also, the first ten matches (0<sub>16</sub> to 9<sub>16</sub>) are easier because they are like converting between base 10 and base 2.</li>
+						<li><a href="http://flippybitandtheattackofthehexadecimalsfrombase16.com/" target="_blank">Flippy Bit And The Attack Of The Hexadecimals From Base 16</a>: a base 2 to base 16 arcade-style shooter. This one is especially challenging.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>  -->   
+
+			
+		<!--<h3>Tips:</h3>
+		<div>
+        	<ul>
+            	<li>
+                	<strong>Page 1: Binary Representation.</strong>
+					<ul>
+						<li>Along with clarifying the use of powers of two versus powers of ten for the place values, this page emphasizes the fact that there is a <em>unique</em> way to represent any positive integer as a sum of powers of two.</li>
+					</ul>
+				</li>
+				<li>
+                	<strong>Page 2: Binary Sequences.</strong>
+					<ul>
+                        <li>We want to make range limitations in computer arithmetic something that students can explore experimentally, so we start by having them write a factorial procedure, because that's a function that grows very quickly, so even for small inputs they can see the results of range limitations.</li>
+                        <li>But we also want to emphasize that allowing human beings to see hardware limitations is a gross failure of abstraction, and that a good programming language doesn't allow that to happen. As the page explains, <em>people have died</em> because of integer overflow. Thus, for pedagogic purposes, Snap<em>!</em> can simulate both bad and good languages.</li>
+                        <li>Snap<em>!</em> can simulate both bignum and non-bignum languages. You can use that to show that it is a failure of abstraction for computer languages to force users to think about and work around hardware limitations.</li>
+					</ul>
+                </li>
+			</ul>
+        </div>-->

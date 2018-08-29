@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="/bjc-r_es/llab/loader.js"></script>
+		<title>Unit 2 Lab 1 Teacher Guide</title>
+		<script type="text/javascript" src="/bjc-r_es/utilities/gifffer.min.js"></script>
+        <script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r_es/css/bjc-gifffer.css">
+    </head>
+    
+    <body>
+        <h2>Lab 1: Improving Games by Using Variables</h2>
+        <div class="todo">Developers, see <a href="https://piazza.com/class/i7hy3udaukx6su?cid=413" target="_blank">Unit 2 Lab 1 Pages 1-2 tips and videos on Piazza</a>.</div>
+		<p>Students build a number-guessing game in which the player tries to guess the computer's secret number, and the computer responds with as human-like dialog as the programmer can build. <!--In doing so, they focus on ideas of <strong>abstraction</strong> to serve the goals or writing clear, debuggable, improvable code—essential for developing complex programs.-->
+         Students gain more experience with conditionals and predicates, preparing them to refine and deepen their understanding  in lab 3. </p>
+		<p>This lab also expands students' understanding of variables. Students have  encountered variables in two contexts: they have created blocks that have <strong>input variables</strong>, usable only inside the block for which they were created; and they have used the <code>for</code> block, which provides an <strong>index variable</strong> (i.e., a counter), usable only in the script that contains the <strong>for</strong> block. This lab introduces <strong>script variables</strong> (a kind of <strong>local variable</strong>), created by the <img class="nopadtb" src="/bjc-r_es/img/prog/scriptvar.png" alt="script variables (a)" title="script variables (a)"/> block, which lets programmers create their own temporary variables in which to store information that a script  needs while it is running. A script variable is called &quot;local&quot; because it exists only while that script is active and  is accessible only by blocks inside that script. Blocks inside that script can set, use, or change the value of that script's variables; blocks outside that script cannot. Index and input variables are also local. By contrast, a <strong>global variable</strong> is accessible by any block in any script belonging to any sprite: it is global in scope.</p>
+<p>Students take time to debug each portion of their project. They get suggestions for features to add but are on their own to think about how to structure these extensions and modifications so that the code works and remains clear.</p>
+        
+                
+        <h3>Pacing</h3>
+		<div>
+			The 4 lab pages could be split across 3-5 days (<strong>100-200 minutes</strong>). Expected times to complete follow:
+			  <ul>
+				<li>30-60 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Developing a Number Guessing Game with Script Variables">Developing a Number Guessing Game with Script Variables</a></li>
+				<li>30-60 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/2-complexity/1-variables-games/2-debugging-extending.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Debugging and Extending Your Number Guessing Game">Debugging and Extending Your Number Guessing Game</a></li>
+				<li>20-40 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/2-complexity/1-variables-games/3-keeping-score.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Keeping Score with Global Variables">Keeping Score with Global Variables</a></li>
+				<li>20-40 minutes (about 1 class period) on <a href="/bjc-r_es/cur/programming/2-complexity/1-variables-games/4-importing-exporting.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Importing Greet Player into Another Program">Importing <code>Greet Player</code> into Another Program</a></li>
+			</ul>
+		</div>
+        
+        <h3>Lab Pages</h3>
+		<div>
+			<ul>
+				<li>
+					<strong>Page 1: Developing a Number Guessing Game with Script Variables.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Create and use a script variable to store temporary data.</li>
+                                <li>Use the <code>repeat until</code> conditional to control program flow.</li>
+                    			<li>Use the <code>ask</code> and <code>answer</code> blocks to manage text input.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>As a Class:</strong>
+							<ul>
+								<!--<li>This involves relatively simple coding, but is very open to students' creative ideas.</li>-->
+                        		<li>There is an introductory offline activity suggested for this page included in the <a href="/bjc-r_es/cur/teaching-guide/U1/general-support/discussion.html#OA" title="Engaging Students in Building Algorithms Offline">Engaging Students in Building Algorithms Offline</a> section of the introduction to this Teacher Guide.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 2: Debugging and Extending Your Number Guessing Game.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Analyze and debug existing code.</li>
+                                <li>Implement additional conditions using predicates.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>Debugging is a skill to refine over time. To support its development, analyze and debug projects together as a class. You may also have students share bugs they have encountered either to solicit suggestions from the class or to share a successful debugging approach. Make &quot;Cherish your bugs&quot; a classroom slogan.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 3: Keeping Score with Global Variables.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Create and use a global variable to keep track of a game score.</li>
+								<li>Use conditionals to end the game when the player reaches a target score.</li>
+                                <li>Use <code>stop</code> blocks to manage program flow.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>Be sure that students rename their project with a Unit 2 filename: U2L1-ClickAlonzo as Snap<em>!</em> will overwrite their Unit 1 project if students save their work under the U1L1-ClickAlonzo filename.
+								  <ul>
+								    <li>The student page urges students to get in the habit of saving an old project under a new name <em>before</em> they change anything in the project.</li>
+							      </ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 4: Importing <code>Greet Player</code> into Another Program.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Export blocks and import them successfully into other projects.</li>
+								<li>Debug possible dependencies on global variables</li>
+							</ul>
+						</li>
+						<!--<li>
+							<strong>Tips:</strong>
+							<ul>
+                            	<div class="todo">ST-I could not find these references in the manual.  In any event I am not in favor of recommendations that end with "too complicated" for this course.  Could be removed.<p>This was cut from the student pages. I agree that too-complicated stuff shouldn't be there, but I think it's ok to share with teachers. That being said, the manual has been updated, and these search terms no longer work, so I will cut this. --MF</p></div>
+								<li>There are, in fact, two different ways in Snap<em>!</em> to avoid using a global variable for revisiting a value with the same script; look up "block variables" and "object oriented programming with lambda" in the <a href="http://snap.berkeley.edu/snapsource/help/SnapManual.pdf" target="_blank">Snap<em>!</em> Reference Manual</a> if you or your students want to know more. (But both of those techniques are a little too complicated for this introductory course.)</li>
+								
+							</ul>
+						</li>-->
+					</ul>
+				</li>
+			</ul>
+		</div>
+        
+        
+        <h3>Optional Assessment</h3>
+        <div>
+            <ul>
+                <li>
+                    <div class="sidenote">Click the presentation mode button (<img class="nopadtb" src="/bjc-r_es/img/sys/presentation-mode.png" alt="presentation mode button" title="presentation mode button" />) before you present this to students. This will hide the code and only show the stage.</div>
+                    Project and run <a class="run" href="/bjc-r_es/prog/2-complexity/U2L1-ShapeMaker.xml" target="_blank" title="Snap! project: U2L1-ShapeMaker"> this Snap<em>!</em> project</a>. Ask students to submit a URL for their own version of this program.<br />
+                    <a class="run" href="/bjc-r_es/prog/2-complexity/U2L1-ShapeMaker.xml" target="_blank" title="Snap! project: U2L1-ShapeMaker">
+                    	<img class="indent" src="/bjc-r_es/img/2-complexity/U2L4-Assessment.png" height="400px" alt="script that draws a either a triangle or a square (at the user's request) on the stage (where the user requests)" title="script that draws a either a triangle or a square (at the user's request) on the stage (where the user requests)" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <h3>Solutions</h3>
+		<div>
+            <ul>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L1-NumberGuessing%20(answer%20file)&editMode&noRun" target="_blank" title="Solution to Page 1, 2, and 4: Number Guessing Game">Page 1, 2, and 4: Number Guessing Game </a>
+                </li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L1-ClickAlonzowithScore%20(answer%20file)&editMode&noRun" target="_blank" title="Solution to Page 3: Click Alonzo with Score">Page 3: Click Alonzo with Score</a></li>
+             </ul>
+         </div>
+                
+        
+        <!--<div class="todo">Old solutions
+     
+		<div>
+            <ul>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4p2%20Guess%20My%20Number%20(answer%20file)" target="_blank">Page 2: Developing a Number Guessing Game</a></li>
+                
+            </ul>
+        </div>
+        </div>-->
+            
+            
+		<h3>Correlation with AP CS Principles Framework<a name="AP" class="anchor">&nbsp;</a></h3>
+        <div class="apStandards">
+            <!--<h4>AP CS Principles Computational Thinking Practices:</h4>
+            <ul>
+                <li>Coming soon...</li>
+            </ul>-->
+            <h4>Enduring Understandings:</h4>
+            <ul>
+                <li><strong>EU 1.1</strong> Creative development can be an essential process for creating computational artifacts.</li>
+                <li><strong>EU 2.2</strong> Multiple levels of abstraction are used to write programs or create other computational artifacts.</li>
+                <li><strong>EU 5.3</strong> Programming is facilitated by appropriate abstractions.</li>
+                <!--not in endorsement docs
+                <li><strong>E U 5.5</strong> Programming uses mathematical and logical concepts.</li>
+                -->
+            </ul>
+            <h4>Learning Objectives:</h4>
+            <ul>
+                <li><strong>LO 1.1.1</strong> Apply a creative development process when creating computational artifacts. [P2]</li>
+                <li><strong>LO 2.2.1</strong> Develop an abstraction when writing a program or creating other computational artifacts. [P2]</li>
+                <li><strong>LO 2.2.2</strong> Use multiple levels of abstraction to write programs. [P3]</li>
+                <!--not in endorsement docs
+                <li><strong>L O 4.1.1</strong> Develop an algorithm for implementation in a program. [P2]</li>
+                -->
+                <li><strong>LO 5.3.1</strong> Use abstraction to manage complexity in programs. [P3]</li>
+                <!--not in endorsement docs
+                <li><strong>L O 5.4.1</strong> Evaluate the correctness of a program. [P4]</li>
+                <li><strong>L O 5.5.1</strong> Employ appropriate mathematical and logical concepts in programming. [P1]</li>
+                -->
+            </ul>
+            <h4>Essential Knowledge:</h4>
+            <ul>
+                <li><strong>EK 2.2.1A</strong> The process of developing an abstraction involves removing detail and generalizing functionality.</li>
+                <li><strong>EK 2.2.1B</strong> An abstraction extracts common features from specific examples in order to generalize concepts.</li>
+                <li><strong>EK 2.2.1C</strong> An abstraction generalizes functionality with input parameters that allow software reuse.</li>
+                <li><strong>EK 2.2.2A</strong> Software is developed using multiple levels of abstractions, such as constants, expressions, statements, procedures, and libraries.</li>
+                <!--overwhelming number; these seemed not as relevant
+                <li><strong>E K 4.1.1E</strong> Algorithms can be combined to make new algorithms.</li>
+                <li><strong>E K 4.1.1H</strong> Different algorithms can be developed to solve the same problem.</li>
+                <li><strong>E K 5.1.2A</strong> An iterative process of program development helps in developing a correct program to solve problems.</li>
+                -->
+                <li><strong>EK 5.3.1A</strong> Procedures are reusable programming abstractions.</li>
+                <li><strong>EK 5.3.1B</strong> A procedure is a named grouping of programming instructions.</li>
+                <li><strong>EK 5.3.1C</strong> Procedures reduce the complexity of writing and maintaining programs.</li>
+                <li><strong>EK 5.3.1D</strong> Procedures have names and may have parameters and return values.</li>
+                <li><strong>EK 5.3.1E</strong> Parameterization can generalize a specific solution.</li>
+                <li><strong>EK 5.3.1F</strong> Parameters generalize a solution by allowing a procedure to be used instead of duplicated code.</li>
+                <li><strong>EK 5.3.1G</strong> Parameters provide different values as input to procedures when they are called in a program.</li>
+                <li><strong>EK 5.4.1C</strong> Meaningful names for variables and procedures help people better understand programs.</li>
+            </ul>
+        </div>            
+
+
+	</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r_es/llab/loader.js"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+		<title>Unit 2 Lab 4 Teacher Guide</title>
+	</head>
+
+	<body>
+		<h2>Lab 4: Dealing with Complexity</h2>
+        <div class="todo">There is a lot of commented out text on this page (especially at the bottom). To be cleaned up next year. --MF, 12/19/17</div>
+		<p>Students learn how to create complex scripts using abstraction techniques such as nesting and composition. They also have their first experiences with <em>recursion</em>, one of the most powerful ideas in computer science.</p>
+
+		<h3>Pacing</h3>
+		<div>
+			The 3 required lab pages could be split across 4-6 days (<strong>165-250 minutes</strong>). Expected times to complete follow:
+            <ul>
+                <li>60-80 minutes (about 2 class periods) on <a href="/bjc-r_es/cur/programming/2-complexity/4-abstraction/1-robot-in-a-maze.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Robot in a Maze">Robot in a Maze</a></li>
+				<li>If used, 40-60 minutes (1-2 class periods) on <a href="/bjc-r_es/cur/programming/2-complexity/4-abstraction/2-fractal-art.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Fractal Art">Fractal Art</a>*</li>
+				<!--<li>40-60 minutes (1-2 class periods) on <a href="/bjc-r_es/cur/programming/2-complexity/4-abstraction/4-composition.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">Composition of Blocks</a></li>-->
+				<li>60-80 minutes (about 2 class periods) on <a href="/bjc-r_es/cur/programming/2-complexity/4-abstraction/3-brick-wall.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Brick Wall">Brick Wall</a></li>
+				<li>35-70 minutes (1-2 class periods) on <a href="/bjc-r_es/cur/programming/2-complexity/4-abstraction/4-building-tic-tac-toe.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Building a Tic-Tac-Toe Board">Building a Tic-Tac-Toe Board</a></li>
+				<li>10-20 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/2-complexity/4-abstraction/5-debugging-recap.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Debugging Recap
+">Debugging Recap
+</a></li>
+			</ul>
+		</div>
+        		
+		<div w3-include-html="/bjc-r_es/utilities/includes/asterisk.txt"></div><script>w3.includeHTML();</script>                		
+        
+        <h3>Lab Pages</h3>
+		<div>
+			<ul>
+				<li>
+					<strong>Page 1: Robot in a Maze.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+                                <li>Gain experience with a type of question (robot movement) that often appears  in  AP CSP exams.</li>
+                              <li>Learn how to nest looping blocks efficiently to simplify and condense code.</li>
+                                <li>Understand how "hiding of complexity" is an example of <em>abstraction</em> in computer science.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                                <li>Make sure that students  understand and implement the <code>Escape Maze 1</code> code before attempting more difficult mazes.</li>
+                                <li>You might treat this project as a class tournament to  come up with the most elegant and concise code to escape each maze.  This could lead to a discussion as to what constitutes as "elegant" and "concise" code and this is completely in the spirit of this project.</li>
+                                <li>On the other hand, make clear that this is an artificially constrained  programming task. &quot;Number of steps&quot; is not always a good measure of elegance. (Think about how the blocks <code>point</code>, <code>x coordinate</code>, and <code>y coordinate</code> add more blocks of code, "more steps," but add elegance, because the ADT <em>point</em> clarifies the meaning.)</li>
+                                <li>Compare solutions as a class. Do any pairs have the same number of steps but different approaches?</li>
+                                <li>The later mazes make it harder  to find patterns and condense code.  The challenge aims to encourage students to think outside the box and offer unconventional approaches.  One such unconventional approach (which relies on codifying the moves needed to escape a given maze, for example as FLFRFF...) is hinted in the solutions file.</li>
+                                <li>Encourage students to think about <em>generic</em> algorithms that a robot could apply to escape <em>any</em>  simple maze.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+                    <strong>Page 2: Fractal Art.</strong>
+                    <ul>
+                        <li>
+                            <strong>Learning Goals:</strong>
+                            <ul>
+                                <li>Understand the result of nested repeat blocks.</li>
+                                <li>Read a program and predict the result of running it.</li>
+                                <li>Have a first introduction to <em>recursion</em>, one of the greatest ideas in computer science.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>
+                                    <strong>Mathematics Note: Angles in polygons.</strong> The script that draws a triangle:<br />
+                                    <img class="indent" src="/bjc-r_es/img/1-introduction/triangle-script.png" alt="repeat (5) {move (50) steps; turn clockwise (120) degrees}" title="repeat (5) {move (50) steps; turn clockwise (120) degrees}" /><br />
+                                    has three turns of 120&deg;. To see why, imagine walking around an equilateral triangle, keeping track of how much you turn in total. When you get back to where you started, you'll have turned 360&deg;. But you made 3 equal turns, so each turn is ⅓ of 360&deg; or 120&deg;.
+                                </li>
+                                <li>
+                                    <strong>Mathematics Note: Preview of recursion.</strong> The figures in the animation at the top of the page  seem quite complicated. But they can be generated by a programming style that previews a technique that will be developed in more depth in Unit 6. To get a feel for what's going on, start with a script that draws a triangle:<br />
+                                    <img class="indent" src="/bjc-r_es/img/1-introduction/triangle-script.png" alt="repeat (3) {move (50) steps; turn right (120) degrees}" title="repeat (5) {move (50) steps; turn right (120) degrees}" />
+                                    <img class="indent noshadow" src="/bjc-r_es/img/1-introduction/triangle.png" alt="sprite drawing a triangle" title="sprite drawing a triangle" /><br />
+                                    Now make it take a break at each vertex and do something simple, like play a note:<br />
+                                    <img class="indent" src="/bjc-r_es/img/1-introduction/triangle-sound-script.png" alt="repeat (3) {move (100) steps; play note (60) for (0.5) beats; turn clockwise (120) degrees}" title="repeat (3) {move (100) steps; play note (60) for (0.5) beats; turn clockwise (120) degrees}" /><br />
+                                    Instead of making it play a note, have it draw a smaller triangle:<br />
+                                    <img class="indent" src="/bjc-r_es/img/1-introduction/triangle-nested-script.png" alt="repeat (3) {move (100) steps; repeat (3) {move (50) steps; turn right (120) degrees}; turn right (120) degrees}" title="repeat (3) {move (100) steps; repeat (3) {move (50) steps; turn right (120) degrees}; turn right (120) degrees}" />
+                                    <img class="indent noshadow" src="/bjc-r_es/img/1-introduction/triangle-nested.png" alt="sprite drawing a red triangle with a smaller nested triangle at each vertex" title="sprite drawing a red triangle with a smaller nested triangle at each vertex" /><br />
+                                    Now you can get as intricate as you want by inserting ever-smaller triangles between each <code>move</code> and <code>turn</code>.
+                                </li>
+                                <li><em>Recursion</em> is one the most profound (and potentially difficult) concepts in all of computer science due to its <em>self-referential</em> nature.  Your kids (and you) will succeed now, but comfort and mastery can take a long time. This is just an appetizer; with more experience later this year, the purpose and enormous value of recursion will become more apparent.</li>  
+                                <li>
+                                    If you had exposure to recursion before, you may be wondering where in our code  we are dealing with the "base case" that terminates the iterative process.  A little reflection will show that the condition that terminates the recursion is the <code>if (size &gt; 4)</code> block and the implicit "base case" is: <code>if size &le; 4</code> then stop drawing.<br />
+                                    <img class="indent" src="/bjc-r_es/img/2-complexity/U2ImageVideoAddendum_img/nestedTriangleRecursive.png"  height="300" alt="nested triangle, size:(size){if((size)>(4)){repeat(3){move(size) steps; nested triangle, size:((size)/2); turn clockwise(120) degrees}}}" title="nested triangle, size:(size){if((size)>(4)){repeat(3){move(size) steps; nested triangle, size:((size)/2); turn clockwise(120) degrees}}}" />
+                                </li>
+                            </ul>
+						</li>
+					</ul>
+				</li>
+                <!--<li>
+					<strong>Page 4: Composition of Blocks.</strong>
+					<ul>
+						<li>
+							<strong>Goals:</strong>
+							<ul>
+								<li>Practice composing reporter blocks with other reporter blocks.</li>
+								<li>Understand that using simpler blocks to define a more complicated block is an example of <em>abstraction</em> in computer science, as this process hides complexity.</li>
+                                <li>Have another exposure to recursion in a new context.</li>
+                                <li>Understand that the two basic components of a recursive process are: the "base case," which tells the process how to terminate, and the "recursive" case, which tells the process how to iterate.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>It is essential in this page that the students perform each of the tasks given in their entirety prior to moving on to the next task as the tasks are connected and they build upon each other.</li>
+                                <li>Most students will find the idea of composition difficult.  It may be a good idea to emphasize that in a composition, a reporter block becomes an <em>input</em> for another reporter block.  This is a lot like composition of two functions in mathematics, where one function becomes the input for the other: f( g(x) ).</li>
+								<li>It may be a good idea in task #5 to explicitly highlight the two fundamental steps of recursion.  Students should understand that the "base case" of recursion decides when and how the process will terminate and the "recursive case" decides how the process will iterate, each time reducing the task at hand.</li>
+                             
+							</ul>
+						</li>
+					</ul>
+				</li>-->
+                <li>
+					<strong>Page 3: Brick Wall.</strong>
+					<ul>
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+								<li>Get more experience with abstraction in the context of developing blocks that specialize on specific tasks.</li>
+                                <li>Use abstraction to create a somewhat complex program built on relatively simple custom blocks.</li>
+                                <li>Learn the programming strategy of getting individual aspects working completely instead of trying to build all aspects simultaneously.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                                <li>Most students will find it easier to develop the <code>rowA</code> block than the <code>rowB</code> block due to its two smaller bricks.  Getting the two rows to span the same length will require some trial and error.</li>
+                                <li>The <code>draw a Brick Wall</code> block definition must identify whether an even or an odd numbered row is being built. One way to do that is to call <code>even?</code> on the row number for each row. Another way is to make height/2 repetitions of a <code>rowA</code> and a <code>rowB</code>, then see if the total height is even or odd to decide whether or not to draw a final <code>rowA</code>.</li>
+                             <li>Think about what helper blocks besides <img src="/bjc-r_es/img/abstraction/new-brickwall/draw-brick.png" alt="Draw Brick" title="Draw Brick"/> you might want.</li>
+                                    <div class="takeNote"> 
+                                        <p><strong>Too much abstraction? </strong>It's possible to go overboard on abstraction and build so many blocks that your program is just as cluttered as it would be without the special blocks. </p>
+                                        <p>But it can also be useful to make a special block even when its definition is just one built-in block. For example, to draw the mortar (the cement between bricks, shown  as white space), you can just use <img src="/bjc-r_es/img/abstraction/new-brickwall/move4.png" alt="move (4) steps" title="move (4) steps">, but it might make sense to define a <code>draw mortar</code> block. </p>
+                                        <p>Why? You might later decide that 4 steps is the wrong thickness for mortar, and you'd rather have 5. Or you might want the mortar to be  cement-colored, slightly gray. With many <code>move</code> blocks scattered through your program, you would have to find and change each one, and keep putting in <code>set pen color</code> blocks. With a <code>draw mortar</code> block, you can just change its definition and all the mortar in your picture will be changed.</p>
+                                </div>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<strong>Page 4: Building a Tic-Tac-Toe Board.</strong>
+                    <ul>
+
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+                       			<li>Understand that there <em>are</em> often very different ways to solve a problem.</li>
+                        		<li>Appreciate the important CS concept of &quot;parallelism,&quot;&mdash;the fact that multiple processes can be running at the same time (in this case, multiple sprites remaining simultaneously &quot;aware&quot; and waiting for a click).</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                        		<li>Later when students extend Tic-Tac-Toe to check for legal moves, to check for wins, and ultimately to <!-- develop the Artificial Intelligence (AI) to--> have the machine play competently, the machine will need to keep a record of each move. The approach in previous years to Tic-Tac-Toe required the programmer to design a way to sense where on the screen a player moved; in this alternative version, the squares of the Tic-Tac-Toe board are <strong><em>click-conscious </em></strong> sprites, thus eliminating the need for the programmer to compute the board cell numbers from the coordinates of the mouse click.  This approach takes advantage of a capability of Snap<em>!</em> that is not in all programming languages&mdash;clones&mdash;a sophisticated and valuable abstraction that  simplifies the programmer's task in languages that provide it.</li>
+                                <li>
+                                    This project hints at two important modern ideas in computer science:
+                                    <ul>
+                                    	<li>One is <strong>object oriented programming</strong>: Instead of a single sequence of instructions, the program has several <em>independent</em> objects (also called "agents" or "actors"), each of which has its own behavior.  In this project, the player can only click on one sprite at a time, and it then carries out a very quick task (changing costume) before the player clicks another sprite.  But a more complicated program might have one sprite send a <em>message</em> to another sprite, which would respond with its own behavior, while the first sprite continues with its own script.</li>
+                                        <li>The other idea is <strong>parallelism</strong> or <strong>distributed computing</strong>. This project runs on a single computer, and the apparent ability of sprites to run simultaneously is an illusion provided by Snap<em>!</em>, which runs one script for a little while, then switches to a different script, and so on, then updates the display, then continues the first script. But it's possible to use nine separate computers, one for each sprite. That would be overkill for this small project, but large web servers such as Google or Twitter have many thousands of computers all cooperating to handle the large amounts of data they require.</li>
+                                    </ul>
+                                </li>
+							</ul>
+						</li>
+                    </ul>
+                </li>
+                
+                    
+						<!--<li>
+							<strong>Learning Goals:</strong>
+							<ul>                                <li>Analyze code with nested operations.</li>
+                                <li>Use abstraction to make code easier to read and maintain.</li>
+                                <li>Design and implement procedures that call other procedures.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                                <li>
+                                    <em>What do I do when a student asks how to solve a problem?</em> There will almost certainly be parts of some of these projects that <em>you</em> don't quickly see how to do. But even when you <em>do</em> know how to solve the problem, the most useful answer you can give is often one of these:
+                                    <ul> 
+                                        <li>Show me what you've already figured out.</li>
+                                        <li>What are the <em>parts</em> of the problem that need to be built? </li>
+                                        <li>Is there a good starting place (or a thing to do next), something really simple that will get us a bit closer?</li>
+                                    </ul>
+                                </li>
+                                <li>The orange box about abstraction doesn't mention that even building the board out of boxes is an abstraction-based design decision. That's not how you draw a tic-tac-toe board by hand; you draw long intersecting lines. That could have been done  here, too, but the goals was a <code>draw tile</code> block that could be modified later.</li>
+                                <li><strong>Mathematics Note: State invariance.</strong> Drawing a row of tiles requires that students build in instructions to move the sprite to "the next" position. That's because the typical routine for drawing a square, "<code>repeat (4) [move (100), turn (90)]</code>" puts the sprite back in its original position&mdash;the script is <em>state invariant</em>. Building state invariance into scripts and blocks is often a good idea, because  "ending where you started" makes it easier to use the block in a larger script. But <code>draw a row</code> and <code>draw the board</code> will probably not  be state invariant in students' solutions.</li>
+							</ul>
+						</li>
+					</ul>
+				</li>-->
+                <li>
+					<strong>Page 5: Debugging Recap.</strong>
+                    <ul>
+
+						<li>
+							<strong>Learning Goals:</strong>
+							<ul>
+                       			<li>Review previously learned strategies for debugging and preventing bugs.</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+                        		<li>Some of these suggestions and strategies might make for a nice classroom poster.</li>
+							</ul>
+						</li>
+                    </ul>
+                </li>
+                
+	        </ul>
+        </div>
+
+
+		<!--<h3>Assignments:</h3>
+		<div>
+			<ul>
+				<li>...</li>
+			</ul>
+		</div>-->
+
+			
+		<h3>edX BJC Videos</h3>
+        <div class="sidenote">
+            <strong>No YouTube access at your school?</strong><br />
+            Try these <a href="/bjc-r_es/cur/teaching-guide/resources/video-list-scratch.html" title="edX BJC Videos (Alternate Links)">Alternate Links</a>.
+        </div>
+        <div>
+        	<ul>
+                <li><a href="https://www.youtube.com/watch?v=E-UMuAB0JOo&list=PLno6_GYnQv_Shd5NHuuYRO0GIxIgft2DM&index=3&noredirect=1" target="_blank" title="edX Video- Abstraction: Abstraction &amp; Detail Removal">Abstraction: Abstraction &amp; Detail Removal</a></li>
+                <li><a href="https://www.youtube.com/watch?v=97jcSsTUtzY&list=PLno6_GYnQv_Shd5NHuuYRO0GIxIgft2DM&index=4" target="_blank" title="edX Video- Abstraction: Generalization">Abstraction: Generalization</a></li>
+                <li><a href="https://www.youtube.com/watch?v=MIva9WH-kuU&list=PLno6_GYnQv_Shd5NHuuYRO0GIxIgft2DM&index=5" target="_blank" title="edX Video- Abstraction: Abstraction Interfaces and Summary">Abstraction: Abstraction Interfaces and Summary </a></li>
+                <li><a href="https://www.youtube.com/watch?v=btVdslI-L9M&list=PLno6_GYnQv_Shd5NHuuYRO0GIxIgft2DM&index=12" target="_blank" title="edX Video- Abstraction: Power, Limitations">Abstraction: Power, Limitations</a></li>
+            </ul>
+        </div>
+
+		<h3>Solutions</h3>
+		<div>
+			<ul>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4RobotinaMaze&editMode&noRun" target="_blank" title="Solution to Page 1: Robot in a Maze">Page 1: Robot in a Maze</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4NestedTriangle&editMode&noRun" target="_blank" title="Solution to Page 2: Fractal Art">Page 2: Fractal Art</a>, <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4p2-UnfoldingTriangles&editMode&noRun" target="_blank" title="Solution to TIF: Unfolding Triangles">TIF: Unfolding Triangles</a>,  <a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4p2-UnfoldingSquares&editMode&noRun" target="_blank" title="Solution to TIF: Unfolding Squares">TIF: Unfolding Squares</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4BrickWall&editMode&noRun" target="_blank" title="Solution to Page 3: Brick Wall">Page 3: Brick Wall</a></li>
+                <li><a href="https://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U2L4-Tic-Tac-Toe%20(answer%20file)&editMode&noRun" target="_blank" title="Solution to Page 4: Building a Tic-Tac-Toe Board">Page 4: Building a Tic-Tac-Toe Board</a></li>
+            </ul>
+		</div>
+            
+   		
+			
+		<h3>Correlation with AP CS Principles Framework<a name="AP" class="anchor">&nbsp;</a></h3>
+		<div class="apStandards">
+			<!--<h4>Computational Thinking Practices:</h4>
+			<ul>
+				<li>Coming soon...</li>
+			</ul-->
+			<h4>Enduring Understandings:</h4>
+			<p></p>
+			<ul>
+				<li><strong>EU 1.1</strong> Creative development can be an essential process for creating computational artifacts.</li>
+                <li><strong>EU 2.2</strong> Multiple levels of abstraction are used to write programs or create other computational artifacts.</li>
+                <li><strong>EU 5.3</strong> Programming is facilitated by appropriate abstractions.</li>
+			</ul>
+			<h4>Learning Objectives:</h4>
+			<p></p>
+			<ul>
+				<li><strong>LO 1.1.1</strong> Apply a creative development process when creating computational artifacts. [P2]</li>
+                <li><strong>LO 2.2.1</strong> Develop an abstraction when writing a program or creating other computational artifacts. [P2]</li>
+                <li><strong>LO 2.2.2</strong> Use multiple levels of abstraction to write programs. [P3]</li>
+                <li><strong>LO 5.3.1</strong> Use abstraction to manage complexity in programs. [P3]</li>
+			</ul>
+			<h4>Essential Knowledge:</h4>
+			<ul>
+				<li><strong>EK 2.2.1A</strong> The process of developing an abstraction involves removing detail and generalizing functionality.</li>
+                <li><strong>EK 2.2.1B</strong> An abstraction extracts common features from specific examples in order to generalize concepts.</li>
+                <li><strong>EK 2.2.1C</strong> An abstraction generalizes functionality with input parameters that allow software reuse.</li>
+                <li><strong>EK 2.2.2A</strong> Software is developed using multiple levels of abstractions, such as constants, expressions, statements, procedures, and libraries.</li>
+                <li><strong>EK 4.1.1A</strong> Sequencing, selection, and iteration are building blocks of algorithms.</li>
+                <li><strong>EK 4.1.1D</strong> Iteration is the repetition of part of an algorithm until a condition is met or for a specified number of times.</li>
+                <li><strong>EK 4.1.2G</strong> Every algorithm can be constructed using only sequencing, selection, and iteration.</li>
+				<li><strong>EK 5.3.1A</strong> Procedures are reusable programming abstractions.</li>
+                <li><strong>EK 5.3.1B</strong> A procedure is a named grouping of programming instructions.</li>
+                <li><strong>EK 5.3.1C</strong> Procedures reduce the complexity of writing and maintaining programs.</li>
+                <li><strong>EK 5.3.1D</strong> Procedures have names and may have parameters and return values.</li>
+                <li><strong>EK 5.3.1E</strong> Parameterization can generalize a specific solution.</li>
+                <li><strong>EK 5.3.1F</strong> Parameters generalize a solution by allowing a procedure to be used instead of duplicated code.</li>
+                <li><strong>EK 5.3.1G</strong> Parameters provide different values as input to procedures when they are called in a program.</li>
+			</ul>
+		</div>			
+
+
+	</body>
+</html>
+
+<!--
+<p>Students begin with a drawing project, "Brick Wall,"  and then take another step toward completing Tic Tac Toe (and other  games played on arrays). In each case, they  focus  on ideas of <strong>abstraction</strong> to serve the goals or writing clear, debuggable, improvable code—essential for developing complex programs. This is not the first time they used abstraction—they encountered it when they first built the game board for Tic Tac Toe (and other games) and when they built "specialist blocks" for making plurals. But this <em>is</em> where they begin to analyze the various uses of abstraction, for example, a case in which it is useful to build a  block that seems only to be a new name for a block they already have.</p>
+		<p>Students are given very specific goals for Brick Wall, guidance on <em>structuring</em> it, and rationale for that structure. </p>
+        <p>There is no new Snap<em>!</em> code in Lab 4. Even the idea of abstraction—analyzing a task to find its chunks or component parts or special cases and then build blocks that <em>specialize</em> in each of them—is not new. But making a <em>habit</em> of analyzing and chunking tasks takes time and experience.</p>	
+        
+        
+        <strong>Tips:</strong>
+							<ul>
+                                <li><em>Do this page yourself before class.</em></li>
+                                <li>The <code>move to tile</code> block may be the greatest challenge. Students  may need your help  puzzling through the logic and mathematics of this problem. Discuss how to use <code>mod</code>  (introduced in <a href="/bjc-r_es/cur/programming/1-introduction/4-grids-for-games/2-computer-operations.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment">Unit 1 Lesson 4, Expressions and Operations</a>) to determine the column from the tile number. <code>(tile number) mod (number of tiles)</code><em>almost</em> does the right thing. Encourage students to <em>experiment</em> to see what case(s) it gets wrong and what adjustment to make.</li>
+                                <li>This program shows up again in Unit 3 in a very important role. You may want to have successful students present their work on this to the class so that other students who struggle with the reasoning are able to complete the lab.</li>
+                                <li>
+                                    <strong>Mathematics Note: Locating the Cell.</strong>
+                                    Problem 4 requires converting the sprite position on the coordinate grid to the cell number on a game board. One way to develop the conversion is to start small, with a (3 by 3) tic-tac-toe board, and to try various positions for the sprite, looking for a way to calculate the cell number from the screen position.  In fact, as the student page suggests, it might help to start even smaller and to figure out the row number and column number from the screen position, worrying about how to turn this pair of numbers into a cell number later. Here's a tic-tac-toe board with a sprite on a cell:<br />
+                                    <img class="indent noshadow" src="/bjc-r_es/img/2-conditionals-abstraction-testing/ttt-blank-board.jpg" alt="blank tic tac toe board" title="blank tic tac toe board" /><br />
+                                    Starting on the upper left cell, number the columns 1, 2, 3 across, and number the rows 1, 2, 3 down.  So, this sprite is in the row 2 and column 3. Snap<em>!</em> reports that its <em>x</em>-position is 130 and its <em>y</em>-position is 26.  So, we want to convert the screen position (130, 26) into “row 2, column 3”.<br />
+                                    Concentrate on the column first.  Imagine the sprite traveling from the left edge of the board to the right edge.  The first thing to realize is that the column that contains the sprite is only affected by the <em>x</em>-position of the sprite (the <em>y</em>-position tells you up  or down, but <em>x</em> tells you how far across). And the <em>x</em>-position goes from -150 to 150&mdash;a total width of 300 steps (this is how the board was built in Unit 1). When it's not clear what to do, look at some numerical data and try to abstract off some generality. Here's just one example, with the <em>x</em>-positions chosen at random.  But gather enough data to get an idea about what's happening.<br />
+                                    <img class="imageRight noshadow" data-gifffer="/bjc-r_es/img/2-conditionals-abstraction-testing/ttt-column-number-animation.gif" alt="animation of column number watcher while sprite moves horizontally" title="animation of column number watcher while sprite moves horizontally" />
+                                    <table class="bordered centered">
+                                        <tr>
+                                            <th>x-position<br />"x"</th>
+                                            <th>column number<br />"c"</th>
+                                        </tr>
+                                        <tr>
+                                            <td>-140</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-70</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-50</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-40</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>50</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>70</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>130</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>150</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </table><br clear="all"/>
+                                    A little more experimenting shows that if the <em>x</em>-position is between -150 and -50, the sprite is in column 1;  if its <em>x</em>-position is between -5 and 50, it's in column 2, and if it's <em>x</em>-position is between 50 and 150, it's in column 3.  Now, you <em>could</em> get the column number from the <em>x</em>-position with the <img class="inline" src="/bjc-r_es/img/2-conditionals-abstraction-testing/between.png" alt="is _ between _ and _ ?" title="is _ between _ and _ ?" /> predicate, but this would become cumbersome if board gets large.  Here's another way to think about it...<br />
+                                    On a tic-tac-toe board, each column has width 300 / 3 = 100. So  each column contributes at most 100 steps to the <em>x</em>-position.  For example,  if you are in column 2, you've moved at most 200 steps  (and more  than 100) from an <em>x</em>-position of -150.  If you are in column 3, you have moved at most 300 steps from an <em>x</em>-position of -150. That is,  if you are in column <em>c</em>, you have moved at most <em>c</em> × 100 steps from an <em>x</em>-position of -150.   So, the <em>x</em>-position of the sprite as it moves across should be about -150 + <em>c</em> × 100.  If this were an exact relation, you'd have an equation:<br />
+                                    <span class="katex-block">-150 + c \times 100 = x</span>
+                                    If you solve this for <em>c</em>, you get an equation for the column number based on the <em>x</em>-position:<br />
+                                    <span class="katex-block">c = \frac{x+150}{100}</span>
+                                    Now, this isn't exact, but it can be salvaged by reasoning a little about why it's not exact and looking at some numerical data.  Using the table from above, compare the actual column number to the approximate:<br />
+                                    <img class="imageRight" src="/bjc-r_es/img/2-conditionals-abstraction-testing/xposition+150thendiv100.png" alt="(xposition + 150) / (100)" title="(xposition + 150) / (100)" />
+                                    <table class="bordered centered">
+                                        <tr>
+                                            <th>x-position<br />"x"</th>
+                                            <th>column number<br />"c"</th>
+                                            <th><span class="katex">\mathbf{\frac{x+150}{100}}</span></th>
+                                        </tr>
+                                        <tr>
+                                            <td>-140</td>
+                                            <td>1</td>
+                                            <td>0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-70</td>
+                                            <td>1</td>
+                                            <td>0.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-50</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>-40</td>
+                                            <td>2</td>
+                                            <td>1.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>2</td>
+                                            <td>1.6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>50</td>
+                                            <td>2</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>70</td>
+                                            <td>3</td>
+                                            <td>2.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>3</td>
+                                            <td>2.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>130</td>
+                                            <td>3</td>
+                                            <td>2.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>150</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </table>
+                                    In each case, the formula gives a number which, when rounded <em>up</em>, gives the column number.  A little reasoning shows that this will always be the case.  And there is a <a href="/bjc-r_es/cur/teaching-guide/U2/lab-pages/old/3-tools-techniques.html?topic=nyc_bjc%2F2-teaching-guide.topic&course=bjc4nyc_teacher.html&novideo&noassignment#round">"round up" operator</a>: it's called <strong>ceiling</strong> (it's under the sqrt operator).  Hence, you can get the column number from the <em>x</em>-position:
+        <br />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/ceilingapprox.png" alt="ceiling of ((x position + 150) / (100))" title="ceiling of ((x position + 150) / (100))" /><br />
+                                    And it's the same structure for an 5 by 5 board or an <em>n</em> by <em>n</em> board.  The only change is that the width of the column (the chunk moved over each time) changes from 100 to 300/<em>n</em>, so that you can make a general <strong>column</strong> block that takes an input <em>n</em> the size of the game board and returns the number of the column where the sprite happens to reside. 
+        <br />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/coln.png" alt="col (n): {ceiling of ((x position + 150) / (300 / n))}" title="col (n): {ceiling of ((x position + 150) / (300 / n))}" /><br />
+                                    Finding the row number involves similar reasoning:  Try some numerical experiments, make tables, and abstract off what you see and what you are doing.  The finished product might look like this:<br />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/row-with-floor.png" alt="row (n): {report (n - floor of ((y position + 150) / (300 / n)))}" title="row (n): {report (n - floor of ((y position + 150) / (300 / n)))}" /><br />
+                                    or maybe this:<br />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/row-with-ceiling.png" alt="row (n): {report (ceiling of (n - ((y position + 150) / (300 / n))))}" title="row (n): {report (ceiling of (n - ((y position + 150) / (300 / n))))}" /><br />
+                                    <div class="endnote">The adjustment "<em>n</em> minus" in front of <span class="katex">\frac{y+150}{300/n}</span> is due to the fact that you are starting the column numbering on the top left rather than at the bottom left (bottom left is where it would  start on a coordinate grid).</div>
+                                    This is one way to calculate the row and column number from the screen position of the sprite.  The rest of the task is outlined in the solutions, but the blocks all follow the same reasoning and also yield to this method of "try it with numbers" until you get the rhythm of the algorithm. <br />
+                                    To summarize the results (and not the derivations), there are three more relations that will be useful:
+                                    <ul>
+                                        <li>
+                                            Given (<em>row</em>, <em>col</em>) on an <em>n</em> by <em>n</em> board, the cell number can be found by:
+                                            <span class="katex-block">cell = (row-1) \times n + col</span>
+                                        </li>
+                                        <li>
+                                            Given a <em>cell</em> number on an <em>n</em> by <em>n</em> board, the (<em>row</em>, <em>col</em>) pair can be found by:
+                                            <span class="katex-block">row = \text{ceiling} (\frac{cell}{n})</span>
+                                            <span class="katex-block">col = cell - (row - 1) \times n</span>
+                                        </li>
+                                        <li>
+                                            Given (<em>row</em>, <em>col</em>) for a cell on an <em>n</em> by <em>n</em> board, the center of the cell (<em>xCenter</em>, <em>yCenter</em>) is given by:
+                                            <span class="katex-block">xCenter = (-150+\frac{300/n}{2}) +  (\frac{300}{n})(col-1)</span>
+                                            <span class="katex-block">yCenter =(150-\frac{300/n}{2}) - (\frac{300}{n})(row-1)</span>                                    
+                                        </li>
+                                    </ul>
+                                    Someone looking at these with no context may wonder where they came from and who could possibly come up with them. The purpose of the first part of this note is to show how they can emerge from careful experiments and abstraction.
+                                </li>
+							</ul>
+						</li>
+					</ul>
+
+<strong>Mathematics Note: Composition of Operators.</strong> The "home made" operators on this page all have the property that the order of their inputs doesn't matter.<br />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/x+y+z-definition.png" alt="() + () + () : { () + ( () + () ) }" title="() + () + () : { () + ( () + () ) }" /><br />
+                                    This isn't always the case when one reporter is embedded in ("composed with") another. For example, adding three to a number and then multiplying by 2 produces different results than first multiplying by 2 and then adding 3.<br />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/f-of-2-7-3-reporting.png" alt="f(2, 7, 3) reporting 20" title="f(2, 7, 3) reporting 20" />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/f-of-3-7-2-reporting.png" alt="f(3, 7, 2) reporting 27" title="f(3, 7, 2) reporting 27" />
+                                    <img class="indent" src="/bjc-r_es/img/2-conditionals-abstraction-testing/f-of-x-y-z-definition.png" alt="f(x, y, z) : { (x) × (y + z) }" title="f(x, y, z) : { (x) × (y + z) }" />
+                                    <li>This involves the simplest coding of the three projects, but contains a <strong>key idea</strong> about abstraction. The suggestion to create a <code>draw mortar</code> block is important. It shows how editing <em>one</em> block can update a program in many places. Also, although the coding is simple, figuring out how to make row B's length come out right requires thought.</li>
+                                    
+                                    
+-->

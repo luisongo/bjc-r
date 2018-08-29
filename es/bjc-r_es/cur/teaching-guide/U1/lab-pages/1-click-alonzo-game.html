@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="/bjc-r_es/llab/loader.js"></script>
+		<title>Unit 1 Lab 1 Teacher Guide</title>
+    </head>
+    
+    <body>
+        <h2>Lab 1: Click Alonzo Game</h2>
+        <img class="imageRight noshadow" src="/bjc-r_es/img/1-introduction/alonzo-flip.gif" alt="Alonzo sprite turning left and right" title="Alonzo sprite turning left and right" />
+        <p>Students set up their <span class="snap">snap</span> accounts so that they can save their projects and then dive right into programming, in the very first class, by building a game that they can then play on their smart phone and share with others. The game is to click on Alonzo (at right) as he moves increasingly quickly around the screen.</p>
+        <p>This first lab is designed to hook students' interest in programming. Students will explore many of the ideas introduced here more formally later in this and other units. Students explore the <span class="snap">snap</span> interface and build a simple game app that they can run on their phones. In doing so, they learn to respond to user intervention (in this case, a click) and to compose blocks with one another (e.g., calling <code>go to</code> with inputs determined by <code>pick random</code>).</p>
+		
+        <h3>Pacing</h3>
+        <div class="sidenote">These estimates are for the lab pages only. Additional time will be required for Computing the News or other activities.</div>
+        <p>
+        	The 7 lab pages could be split across 3-5 days (<strong>100-195 minutes</strong>). Expected times to complete follow:
+            <ul>
+                <li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/1-creating-a-snap-account.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Getting Started with Snap!">Getting Started with Snap<em>!</em></a></li>
+                <li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/2-start-your-first-snap-app.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Programming Your App">Programming Your App</a></li>
+                <li>5 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/3-pair-programming-swap.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Saving and Pair Programming">Saving and Pair Programming</a></li>
+                <li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/4-using-the-random-block.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Moving Randomly">Moving Randomly</a></li>
+                <li>10-20 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/5-finish-your-first-snap-app.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Greeting the Player">Greeting the Player</a></li>
+                <li>20-40 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/6-keeping-score.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Make It a Game">Make It a Game</a></li>
+                <li>15-30 minutes (&lt;1 class period) on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/7-loading-mobile-device.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Sharing Your App">Sharing Your App</a></li>
+            </ul>
+        </p>
+
+        <h3>Prepare</h3>
+        <div>
+            <ul>
+                <li><strong>Create your own <span class="snap">snap</span> account.</strong>  Instructions are on <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/1-creating-a-snap-account.html" title="Getting Started with Snap!">this student page</a>.</li>
+                <li><strong>We definitely recommend doing this lab yourself before class.</strong> Once you've set up your <span class="snap">snap</span> account, you can probably do the actual programming work of this lab in 25 minutes. (Later labs are more dense, and ask students to reflect on why they're doing what they're doing, but in this first lab the goal is for them to achieve a result that will excite and encourage them, without worrying about details.) </li>
+                <li>Students need an email account to create a <span class="snap">snap</span> account.
+                    <ul>
+                        <li>School email accounts are fine if they accept incoming mail from outside of the school network.</li>
+                        <li>If it is possible for you to communicate with students before school starts, ask students to be sure they know their email address and password for the first day.</li>
+                        <li>Better yet, suggest that they create Snap<em>!</em> accounts before the first class. You can point them at the <a href="/bjc-r_es/cur/programming/1-introduction/1-building-an-app/1-creating-a-snap-account.html" title="Getting Started with Snap!">lab page</a> that explains how.</li>
+                        <li>In case students have no email address or can't remember it, one solution is to use a free temporary email service &mdash; do a web search for "temporary email," but be sure your network doesn't block connections to the site you select.</li>
+                        <li>Note for middle school teachers: If a student under age 13 creates an account, the dialog box asks for a parent's email rather than the student's own email. This is a legal requirement for <span class="snap">snap</span> to be compliant with the Children's Online Privacy Protection Act.</li>
+                    </ul> 
+                </li>             
+                <li>The article <a href="http://www.computer.org/cms/Computer.org/ComputingNow/homepage/mostread/MostRead-SW-PairProgrammingReallyWorks.pdf" target="_blank" title="How Pair Programming Really Works">How Pair Programming Really Works</a> by Stuart Wray calls into question the "driver/navigator" metaphor everyone uses to explain pair programming with research showing a more complex social interaction between partners. The article is about professional programmers, not students, but many of its ideas are applicable in the classroom.</li>
+                <li>Prepare and copy a "Computer Use Agreement" (<a href="http://csteachingtips.org/tip/have-students-sign-%E2%80%9Ccomputer-use-agreement%E2%80%9D-giving-them-access-machines-hold-them-accountable" target="_blank" title="csteachingtips: Computer Use Agreement">see this example</a>) for students to sign to hold them accountable for using computers responsibly.</li>
+                <li>Prepare several <a href="/bjc-r_es/cur/teaching-guide/U1/general-support/computing-in-the-news.html?topic=nyc_bjc%2F1-teaching-guide.topic&course=bjc4nyc_2015-2016_teacher.html&novideo&noassignment" title="Computing in the News">Computing in the News</a> stories.</li>
+            </ul>
+        </div>            
+        	
+		
+        <h3>As a Class</h3>
+        <div>
+        	<ul>
+                <li>So that students get the immediate excitement of building their own app, consider postponing as much introductory material (e.g., establishing classroom routines) as possible until <em>after</em> Lab 1. Try to preserve at least half of the first lesson to let them get started building the game, working in pairs, <em>before</em> taking care of other first-day business.</li>
+                <li>Only after they have a successful programming experience behind them, introduce any additional educational technology (Google classroom, Piazza, etc.) that you'd like students to use.</li>
+                <!-- <li>
+                	Discussion/Writing Prompts:<a name="discussion" class="anchor">&nbsp;</a>These "pair programming" prompts can be used in sets or spread across several days and are for either individual or collective reflection:
+            		<div class="sidenote">Read more about <a href="/bjc-r_es/cur/teaching-guide/U1/general-support/discussion.html" target="_blank">Facilitating a Classroom Discussion</a></div>
+                    <ul>
+                        <li>What is <a href="/bjc-r_es/cur/teaching-guide/U1/general-support/pair-programming.html" target="_blank">pair programming</a>? How does it work? </li>
+                        <li>What are the benefits of pair programming?</li>
+                        <li>What are the behaviors of an effective pair programming team?</li>
+                    </ul>
+                </li> -->
+                <!-- Is this needed with the new Lab 1 pages from the HOC? --Mary
+                <li><strong>Saving, Submitting, and Sharing Projects in <span class="snap">snap</span></strong> Find a method for students to submit <span class="snap">snap</span> projects that makes sense to you. Here's one suggestion: In <span class="snap">snap</span>, students can choose "Export project..." from the file menu. This brings up text in XML. Students can right-click on the page and "Save As..." to a local folder. Give students directions on naming their files (e.g. Kaleidoscope-first-last.xml), then have them send this file to you. When you go to display their work, you can open <span class="snap">snap</span>, then choose "Import..." and the file.</li>-->
+                <li> 
+                	Be sure students understand that are expected to read all the material presented and complete all the "For You To Do" problems with only the following exceptions:
+                	<ul>
+                    	<li>Yellow boxes are optional reading.</li>
+                     	<li>"If There Is Time..." and "Take It Further" problems are <em>not required</em>. (These are provided for students to work on after finishing the required reading and problems. "If There Is Time..." problems are generally about as difficult as "For You To Do" problems, but "Take It Further" problems are often harder. If pairs have finished their assigned work, they can go ahead and start on some of these extra problems and don't have to wait for permission.)</li>
+                        <li>Gray boxes contain AP vocabulary. These can be skipped the first time around, but should be read during exam preparation.</li>
+                   </ul>
+                </li>
+			</ul>
+		</div> 
+        
+        
+        <h3>Lab Pages</h3>
+        <p>In this first lab, some of the goals are purely administrative rather than computer science goals. In later labs, goals will be more focused on computer science.</p>
+        <div>
+            <ul>
+                <li>
+                    <strong>Page 1: Getting Started with Snap<em>!</em></strong>
+                    <ul>
+                        <li>
+                            <strong>Learning Goal:</strong> Log in to Snap<em>!</em> via the Cloud menu, <img class="button" src="/bjc-r_es/img/1-introduction/cloud_button.png" alt="Cloud button" title="Cloud button" />, using a personal username and password.
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                                <li>A few students will have unpredictable problems creating <span class="snap">snap</span> accounts.  To avoid letting these problems eat up the entire  period, take advantage of pair programming; it's okay if one member of a pair doesn't have an account yet.  You can work with the non-account students after class to get over that hurdle.  (Even better, if you can wrangle a teaching assistant or two from last year's students, this would be a great thing for them to handle during the first class.)</li>
+                                <li>
+                                    <img class="imageRight" src="/bjc-r_es/img/icons/pair-programming-swap.png" alt="Pair Programming Swap" title="Pair Programming Swap" /> 
+                                    The actual pair programming swap that comes partway through the project should be quick, but you'll have to devote a few minutes to discussing how pairs are supposed to work; specifically, the partner whose hands aren't on the keyboard should be actively contributing. Successful pairs are constantly talking.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Page 2: Programming Your App.</strong>
+                    <ul>
+                        <li>
+                            <strong>Learning Goal:</strong> Create a response to a user intervention (in this case, a click) by using the <code>when I am clicked</code> hat block.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Page 3: Saving and Pair Programming.</strong>
+                    <ul>
+                        <li>
+                            <strong>Learning Goal:</strong> Begin the use of pair programming and to understand the value of this way of working.
+                        </li>
+                        <li>
+                            <strong>Tips:</strong>
+                            <ul>
+                            	<li>Some students will strongly resist pair programming, arguing that they work better alone. Tell them to give pair programming an honest try during the first lab or two, and <em>then</em> you'll entertain ideas about modifying the way the pair works if they still want that.</li>
+                                <li>When kids aren't cooperating and both have Snap<em>!</em> open, just go up to them and say: "so, who's the driver and who is the navigator?" and stay over their shoulder until one opens up the lab and yields.</li>
+                                <li>Visit <a href="http://csteachingtips.org/tips-for-pair-programming" target="_blank" title="csteachingtips.org">csteachingtips.org</a> for more suggestions on pair programming.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Page 4: Moving Randomly.</strong>
+                    <ul>
+                        <li>
+                            <strong>Learning Goals:</strong> 
+                            <ul>
+                                <li>Compose one block with another, e.g., making a call to the <code>go to</code> block with inputs that are determined by the the <code>pick random</code> operation.</li>
+                                <li>Learn to load and save projects in the cloud.</li>
+                                <li>Get to know the Snap<em>!</em> coordinate system.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img class="imageRight" src="/bjc-r_es/img/1-introduction/snap-coord-grid.png" alt="Snap! Coordinate Grid with x from -240 to 240 and y from -180 to 180" title="Snap! Coordinate Grid with x from -240 to 240 and y from -180 to 180" />
+                            <strong>Mathematics Note:</strong> The coordinate axes may be a challenge for some students. In the spirit of this first lab, it's not so important that students  understand the Snap<em>!</em> coordinate axes now, and if they don't, just have them follow the instructions literally: a random number between -190 and 190 for <var>x</var>, a random number between -130 and 130 for <var>y</var>. For your reference, here (at right) is the underlying 'anatomy' of the Snap<em>!</em> stage; this background image is available in Snap<em>!</em> by clicking the Stage icon and selecting "Backgrounds" from the File menu, then &quot;xy-grid.&quot;
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Page 5: Greeting the Player.</strong>
+                    <ul>
+                        <li>
+                        <strong>Learning Goal:</strong> Understand hat blocks and the beginning of multi-threading (more than one script can run at a time).</li>
+                        <li><strong>Tips:</strong>
+                          <ul>
+                            <li> A script doesn't <em>have to</em> have a hat block; you can run any script by clicking on it. This is convenient when tinkering with a project; you can have utility scripts that, e.g., put the sprite in the middle of the stage and clear the pen traces.</li>
+                            <li>When using the <code>say</code> block, some students may expect the sprite to make a sound; instead this block makes the sprite display a speech cloud containing the message, as in a cartoon.)</li>
+                          </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Page 6: Make It a Game.</strong>
+                    <ul>
+                        <li><strong>Learning Goal:</strong> Introduce repetition with the <code>forever</code> block.</li>
+						<li>
+							<strong>Tips:</strong>
+							<ul>
+								<li>The reason we use the ghost effect to &quot;keep score&quot; is that we are trying to avoid introducing variables in this lab. The reason for <em>that</em> is to be able to start with local variables: procedure inputs and <code>for</code> block index variables.</li>
+								<li>There are many opportunities here to teach things, e.g., visible stepping to aid debugging. Resist the temptation! Your goal is to get to the end of this lab as quickly as possible, with every student successful.</li>
+							</ul>
+						</li>
+                        <!--<li>
+                            <strong>Mathematics Note:</strong>
+                            <ul>
+                                <!--<li>Once again, students are asked to use coordinates ("move Alonzo to (190,-130)"). They might try changing the coordinates to (190,-130), (-190, 130), or (-190,-130) to get a feel for the workings of the coordinate system. For your reference, here is the underlying 'anatomy' of the Snap<em>!</em> stage; this background image is available in Snap<em>!</em> by clicking the Stage icon and selecting "Backgrounds" from the File menu.<br /><img class="indent" src="/bjc-r_es/img/1-introduction/snap-coord-grid.png" alt="Coordinate Grid" title="Coordinate Grid" /></li>- -->
+                            </ul>
+                        </li>
+
+                <li>
+                    <strong>Page 7: Sharing Your App.</strong>
+                    <ul>
+                        <li><strong>Learning Goal:</strong> Share programs by email and to mobile devices.</li>
+                        <li><strong>Tip:</strong> Make sure both partners end up with a copy of the project in their accounts.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <h3>Assignments</h3>
+        <div>
+            <ul>
+				<!--<li>
+                	Writing Prompt: <strong>How do you interact with computers and digital media?</strong>
+                    <ul>
+	                    <li> 
+                            <!--<div class="sidenote"><s>If you assign this, collect and scan or photocopy the responses to use at the very beginning of Lab 5.</s></div> - ->
+                             <a href="https://docs.google.com/document/d/1oboPDqZ9cNtJ_3fIFVPkfKAPPQkHo7TSKSULbB1CjgA/edit?usp=sharing" target="_blank">This initial writing assignment</a> can help you gauge both students' writing abilities and their familiarity with computers. If this is also the first assignment on Google docs, you can go over the mechanics of storing and accessing their assignments. This writing assignment can also be completed offline for those without Internet access at home.
+                        </li>
+                    </ul>
+                </li>-->
+                <li>
+                	Assessment Ideas:
+                    <ul>
+                        <li>Submit (through whatever mechanism your class uses) a URL for a program that has a sprite that tells the user to “Click me to get a random number!" and then says a random number from between -22 and 22 whenever it is clicked. </li>
+                        <li>Make the sprite go to a spot somewhere on the top right side of the screen when it is clicked.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <h3>Solutions</h3>
+		<div>
+            <ul>
+            	<li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L1p2%20Starting%20Your%20First%20Snap!%20App%20(answer%20file)&editMode" target="_blank" title="Solution to Page 2: Programming Your App">Page 2: Programming Your App</a></li>
+            	<li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L1p4%20Using%20the%20Random%20Block%20(answer%20file)&editMode" target="_blank" title="Solution to Page 4: Moving Randomly">Page 4: Moving Randomly</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=bjcsolutions&ProjectName=U1L1p5%20Greeting%20the%20Player%20(answer%20file)&editMode" target="_blank" title="Solution to Page 5: Greet the Player">Page 5: Greet the Player</a></li>
+                <li><a href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=BJCsolutions&ProjectName=U1L1p6%20Finishing%20Your%20First%20Snap!%20App%20(answer%20file)&editMode" target="_blank" title="Solution to Page 6: Make It a Game">Page 6: Make It a Game</a></li>               
+            </ul>
+        </div>
+            
+            
+		<div class="todo">
+        	<p>Saying that they create an algorithm in this lab is a real stretch.  I would prefer not to claim anything about the framework in this lab, which is frankly (should be frankly) aimed at sucking kids in, not really at teaching CS at all.  -bh</p>
+            <p>Ok, thanks. I moved the algorithmic ones (only) into this TODO and put spaces in the standards so that the <a href="/bjc-r_es/utilities/site-crawler.php" target="_blank">crawler</a> will stop picking these up. The CB says: "Alignment to the AP CEP Learning Objectives must accompany descriptions of each major project. I don't think we can say that a lab is not a major project, and last year, we listed LOs for every lab. --MF, 7/21/17</p>
+            <ul>
+                <li><strong>E U 4.1</strong> Algorithms are precise sequences of instructions for processes that can be executed by a computer and are implemented using programming languages.</li>
+                <li><strong>E U 5.2</strong> People write programs to execute algorithms.</li>
+                <li><strong>L O 4.1.1</strong> Develop an algorithm for implementation in a program. [P2]</li>
+                <li><strong>L O 4.1.2</strong> Express an algorithm in a language. [P5]</li>
+                <li><strong>E K 4.1.1B</strong> Sequencing is the application of each step of an algorithm in the order in which the statements are given.</li>
+            </ul>
+        </div>
+		<h3>Correlation with AP CS Principles Framework<a name="AP" class="anchor">&nbsp;</a></h3>
+        <div class="apStandards">
+            <!--<h4>Computational Thinking Practices:</h4>
+            <ul>
+                <li><strong>P6 Collaborating</strong> Collaborate with another student in solving a computational problem.</li>
+                <li><strong>P6 Collaborating</strong> Exchange knowledge and feedback with a partner or team member.</li>
+            </ul>-->
+            <h4>Enduring Understandings:</h4>
+            <p>Students write programs to execute algorithms (<strong>EU 5.2</strong>) that implement a sequence of instructions for the computer to follow (<strong>EU 4.1</strong>). This lab builds toward these EUs by focusing on a simple game algorithm in which students explore procedures that control sprite appearance and movement. This lab provides line-by-line support for project development as students familiarize themselves with the Snap! programming interface.</p>
+			<ul>
+                <div class="todo">Suggestions to consider:
+                    <ul>
+                        <li><strong>EU 5.1</strong> Programs can be developed for creative expression, to satisfy personal curiosity, to create new knowledge, or to solve problems (to help people, organizations, or society).</li>
+                    </ul>
+                </div>
+            </ul>
+            <h4>Learning Objectives:</h4>
+            <p>Students collaborate to develop a program in Snap! (<strong>LO 4.1.2</strong>) to execute algorithms that control sprite appearance and movement (<strong>LO 5.1.3</strong>) in order to implement the desired behavior in a simple game (<strong>LO 4.1.1</strong>).</p>
+            <ul>
+                <div class="todo">Suggestions to consider:
+                    <ul>
+                        <li><strong>LO 5.1.3</strong> Collaborate to develop a program. [P6]</li>
+                    </ul>
+                </div>
+            </ul>
+            <h4>Essential Knowledge:</h4>
+            <ul>
+                <li><strong>EK 5.2.1B</strong> Program instructions are executed sequentially.</li>
+                <div class="todo">New suggestions to consider:
+                    <ul>
+                        <li><strong>EK 5.1.3A</strong> Collaboration can decrease the size and complexity of tasks required of individual programmers.</li>
+                        <li><strong>EK 5.1.3B</strong> Collaboration facilitates multiple perspectives in developing ideas for solving problems by programming.</li>
+                        <li><strong>EK 5.1.3D</strong> Collaboration can make it easier to find and correct errors when developing programs.</li>
+                        <li><strong>EK 5.1.3E</strong> Collaboration facilitates developing program components independently.</li>
+                    </ul>
+                </div>
+                <div class="todo">Moved to 1.1.2 from 6.1.2. --MF, 12/18/17
+                	<ul>
+						<li><strong>EK 1.3.1D</strong> Digital effects and animations can be created by using existing software or modified software that includes functionality to implement the effects and animations.</li>
+                    </ul>
+                </div>
+		
+            </ul>
+        </div>
+     
+        
+    </body>
+</html>
