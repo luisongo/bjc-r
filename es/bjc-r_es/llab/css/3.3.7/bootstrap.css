@@ -263,8 +263,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('bootstrap.css');
+  src: url('bootstrap.css?#iefix') format('embedded-opentype'), url('bootstrap-compiled.min.css') format('woff2'), url('bootstrap.css') format('woff'), url('bootstrap.min.css') format('truetype'), url('#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6755,3 +6755,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+
+
+
